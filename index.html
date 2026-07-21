@@ -1302,8 +1302,7 @@ h1,h2,h3,h4{ line-height: 1.15; font-weight: 600; }
     </div>
 
     <!-- Submissions are sent to rajshivastudio@gmail.com via Web3Forms.
-         EDIT: paste your access key into WEB3FORMS_KEY in the script at the
-         bottom of this file — the form stays disabled until you do. -->
+         The access key lives in WEB3FORMS_KEY in the script at the bottom. -->
     <form class="contact-form glass reveal" id="contactForm" novalidate>
       <!-- Honeypot: hidden from humans, spam bots tick it and get rejected -->
       <input type="checkbox" name="botcheck" id="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1569,10 +1568,10 @@ h1,h2,h3,h4{ line-height: 1.15; font-weight: 600; }
   });
 
   /* ---------- 9. Contact form (Web3Forms) ---------- */
-  // EDIT: paste your Web3Forms access key between the quotes below.
-  // Get one free at https://web3forms.com — enter rajshivastudio@gmail.com,
-  // and the key is emailed to you. Messages then arrive in that inbox.
-  var WEB3FORMS_KEY = 'PASTE_YOUR_ACCESS_KEY_HERE';
+  // Web3Forms access key — submissions are delivered to rajshivastudio@gmail.com.
+  // Manage or regenerate this key at https://web3forms.com
+  // (This key is public by design; it can only send mail to the verified inbox.)
+  var WEB3FORMS_KEY = '20f76cb7-7a2f-4c4b-9de4-325252cc9e54';
 
   var form = document.getElementById('contactForm');
   var submitBtn = document.getElementById('submitBtn');
