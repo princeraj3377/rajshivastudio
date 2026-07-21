@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Rajshiva Studio | Professional Video Editor — Cinematic &amp; Viral Video Editing</title>
+<meta name="description" content="Rajshiva Studio is a video editing studio crafting cinematic, viral and high-converting videos for YouTube, Shorts, Reels, Podcasts, Commercials, Gaming and Vlogs. 100+ projects, 5M+ views generated.">
+<meta name="keywords" content="video editor, freelance video editor, youtube video editing, shorts editing, reels editing, podcast editing, motion graphics, color grading, cinematic video editor">
+<meta name="author" content="Rajshiva Studio">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0a0d">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rajshiva Studio | Professional Video Editor">
+<meta property="og:description" content="Creating cinematic, viral & high-converting videos for creators and brands.">
+<meta property="og:site_name" content="Rajshiva Studio — Video Editing">
+<!-- Favicon (placeholder clapper mark, replace freely) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0a0d'/%3E%3Cpath d='M25 40h50v35a4 4 0 0 1-4 4H29a4 4 0 0 1-4-4V40z' fill='%23d4a94f'/%3E%3Cpath d='M22 28l54 6-2 10-54-6z' fill='%233fa9f5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- ============================================================
+     RAJSHIVA STUDIO — VIDEO EDITOR PORTFOLIO
+     Single-file production build (HTML + CSS + JS)
+     Search "EDIT:" throughout this file for the quickest spots
+     to personalize (name, links, videos, thumbnails, copy).
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rajshiva Studio",
+  "jobTitle": "Freelance Video Editor",
+  "description": "Professional video editor specializing in cinematic, viral and high-converting video content.",
+  "url": "https://example.com",
+  "sameAs": [
+    "https://youtube.com/@yourchannel",
+    "https://instagram.com/yourusername",
+    "https://linkedin.com/in/yourusername"
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   1. RESET & TOKENS
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+:root{
+  /* Core palette — black / dark-gray base, gold + blue (color-grade duo) accents */
+  --black:        #060607;
+  --bg-dark:      #0c0c10;
+  --bg-surface:   #141418;
+  --bg-surface-2: #1b1b21;
+  --border-soft:  rgba(255,255,255,0.08);
+  --border-strong:rgba(255,255,255,0.16);
+
+  --gold:         #d4a94f;
+  --gold-bright:  #f2cd72;
+  --gold-dim:     rgba(212,169,79,0.14);
+
+  --blue:         #3fa9f5;
+  --blue-bright:  #74c6ff;
+  --blue-dim:     rgba(63,169,245,0.14);
+
+  --text-primary:   #f5f5f7;
+  --text-secondary: #a6a6b1;
+  --text-muted:     #6c6c78;
+
+  --gradient-gold:   linear-gradient(135deg, #f2cd72 0%, #c8933a 100%);
+  --gradient-blue:   linear-gradient(135deg, #74c6ff 0%, #2f7fd1 100%);
+  --gradient-accent: linear-gradient(120deg, #f2cd72 0%, #d4a94f 45%, #3fa9f5 100%);
+
+  --shadow-gold: 0 14px 40px -12px rgba(212,169,79,0.45);
+  --shadow-blue: 0 14px 40px -12px rgba(63,169,245,0.4);
+  --shadow-soft: 0 20px 60px -20px rgba(0,0,0,0.6);
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --ease: cubic-bezier(.16,.84,.44,1);
+  --transition: .4s var(--ease);
+  --container: 1240px;
+}
+
+body{
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Film-grain texture overlay across the whole page for a filmic, premium feel */
+body::before{
+  content:'';
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: .035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img{ max-width: 100%; display: block; }
+a{ text-decoration: none; color: inherit; }
+ul{ list-style: none; }
+button{ font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+input, textarea{ font-family: inherit; }
+
+h1,h2,h3,h4{ line-height: 1.15; font-weight: 600; }
+
+::selection{ background: var(--gold); color: var(--black); }
+
+/* Custom scrollbar */
+::-webkit-scrollbar{ width: 10px; }
+::-webkit-scrollbar-track{ background: var(--bg-dark); }
+::-webkit-scrollbar-thumb{ background: linear-gradient(var(--gold), var(--blue)); border-radius: 10px; }
+
+:focus-visible{ outline: 2px solid var(--gold-bright); outline-offset: 3px; border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+/* ============================================================
+   2. UTILITIES
+   ============================================================ */
+.container{ max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+.section{ padding-block: clamp(70px, 10vw, 130px); position: relative; }
+.gradient-text{
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.section-head{ max-width: 680px; margin-bottom: 64px; }
+.section-head.center{ margin-inline: auto; text-align: center; }
+.section-tag{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  margin-bottom: 18px;
+}
+.section-tag::before{
+  content:'';
+  width: 22px; height: 2px;
+  background: var(--gradient-accent);
+  display: inline-block;
+}
+.section-title{
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  letter-spacing: 1px;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+}
+.section-desc{ color: var(--text-secondary); font-size: 1.02rem; max-width: 560px; }
+.section-head.center .section-desc{ margin-inline: auto; }
+
+.glass{
+  background: rgba(255,255,255,0.035);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-soft);
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: .95rem;
+  letter-spacing: .3px;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-primary{
+  background: var(--gradient-gold);
+  color: #171006;
+  box-shadow: var(--shadow-gold);
+}
+.btn-primary:hover{ transform: translateY(-3px); box-shadow: 0 20px 50px -12px rgba(212,169,79,0.6); }
+.btn-secondary{
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
+  backdrop-filter: blur(10px);
+}
+.btn-secondary:hover{ background: rgba(255,255,255,0.09); border-color: var(--gold); transform: translateY(-3px); }
+.btn-block{ width: 100%; }
+
+/* Reveal-on-scroll */
+.reveal{ opacity: 0; transform: translateY(36px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal.in-view{ opacity: 1; transform: translateY(0); }
+.stagger-grid > *:nth-child(6n+1){ transition-delay: 0s; }
+.stagger-grid > *:nth-child(6n+2){ transition-delay: .08s; }
+.stagger-grid > *:nth-child(6n+3){ transition-delay: .16s; }
+.stagger-grid > *:nth-child(6n+4){ transition-delay: .24s; }
+.stagger-grid > *:nth-child(6n+5){ transition-delay: .32s; }
+.stagger-grid > *:nth-child(6n+6){ transition-delay: .4s; }
+
+/* Film-strip sprocket divider — signature motif */
+.film-strip{
+  height: 22px;
+  width: 100%;
+  background-color: var(--bg-surface);
+  background-image: radial-gradient(circle 5px, var(--bg-dark) 99%, transparent 100%);
+  background-size: 30px 22px;
+  background-position: center;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* ============================================================
+   3. LOADING SCREEN (render-progress themed)
+   ============================================================ */
+.loader{
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--black);
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity .7s var(--ease), visibility .7s var(--ease);
+}
+.loader.hidden{ opacity: 0; visibility: hidden; }
+.loader-content{ text-align: center; width: 280px; }
+.loader-logo{
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+.loader-logo span{ color: var(--gold-bright); }
+.loader-bar-track{
+  height: 3px; width: 100%;
+  background: var(--bg-surface-2);
+  border-radius: 10px; overflow: hidden; margin-bottom: 14px;
+}
+.loader-bar-fill{ height: 100%; width: 0%; background: var(--gradient-accent); }
+.loader-text{
+  font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted);
+}
+.loader-text span{ color: var(--gold-bright); }
+
+/* ============================================================
+   4. SCROLL PROGRESS (film-timeline styled)
+   ============================================================ */
+.scroll-progress{
+  position: fixed; top: 0; left: 0; right: 0; height: 3px;
+  background: rgba(255,255,255,0.05); z-index: 1001;
+}
+.scroll-progress-fill{
+  height: 100%; width: 0%;
+  background: var(--gradient-accent);
+  position: relative;
+  transition: width .1s linear;
+}
+.scroll-progress-fill::after{
+  content:'';
+  position: absolute; right: -4px; top: 50%;
+  width: 9px; height: 9px;
+  background: var(--gold-bright);
+  transform: translateY(-50%) rotate(45deg);
+  box-shadow: 0 0 10px var(--gold-bright);
+}
+
+/* ============================================================
+   5. NAVIGATION
+   ============================================================ */
+.navbar{
+  position: fixed; top: 3px; left: 0; right: 0; z-index: 1000;
+  padding: 22px 0;
+  transition: var(--transition);
+}
+.navbar.scrolled{
+  padding: 14px 0;
+  background: rgba(6,6,7,0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-soft);
+}
+.nav-container{
+  max-width: var(--container); margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo{
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+.logo-dot{ color: var(--gold-bright); }
+.nav-links{ display: flex; align-items: center; gap: 34px; }
+.nav-link{
+  font-size: .92rem; font-weight: 500; color: var(--text-secondary);
+  position: relative; transition: color .3s;
+}
+.nav-link::after{
+  content:''; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px;
+  background: var(--gradient-accent); transition: width .3s var(--ease);
+}
+.nav-link:hover, .nav-link.active{ color: var(--text-primary); }
+.nav-link:hover::after, .nav-link.active::after{ width: 100%; }
+.nav-cta{
+  background: var(--gradient-gold);
+  color: #171006 !important;
+  padding: 10px 22px;
+  border-radius: 100px;
+  font-weight: 600;
+}
+.nav-cta::after{ display: none; }
+.nav-cta:hover{ transform: translateY(-2px); box-shadow: var(--shadow-gold); }
+
+.nav-toggle{
+  display: none; flex-direction: column; gap: 5px; width: 30px; z-index: 1002;
+}
+.nav-toggle span{
+  height: 2px; width: 100%; background: var(--text-primary); border-radius: 2px; transition: var(--transition);
+}
+.nav-toggle.active span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2){ opacity: 0; }
+.nav-toggle.active span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+/* ============================================================
+   6. HERO
+   ============================================================ */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  display: flex; align-items: center;
+  overflow: hidden;
+  padding-top: 90px;
+}
+.cine-bar{
+  position: absolute; left: 0; right: 0; background: var(--black); z-index: 5;
+  transition: height 1.3s var(--ease);
+}
+.cine-bar-top{ top: 0; height: 100%; }
+.cine-bar-bottom{ bottom: 0; height: 100%; }
+.hero.opened .cine-bar-top{ height: 7%; }
+.hero.opened .cine-bar-bottom{ height: 7%; }
+
+.hero-bg{ position: absolute; inset: 0; z-index: 0; }
+.hero-blob{
+  position: absolute; border-radius: 50%; filter: blur(110px); opacity: .32;
+  animation: float 14s ease-in-out infinite;
+}
+.blob-gold{ width: 480px; height: 480px; background: var(--gold); top: -10%; left: -8%; }
+.blob-blue{ width: 520px; height: 520px; background: var(--blue); bottom: -15%; right: -10%; animation-delay: -6s; }
+@keyframes float{
+  0%, 100%{ transform: translate(0,0) scale(1); }
+  50%{ transform: translate(40px,-30px) scale(1.1); }
+}
+
+.hero-content{ position: relative; z-index: 2; padding-block: 40px; }
+.eyebrow{
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 18px; border-radius: 100px;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border-soft);
+  font-size: .82rem; font-weight: 500; color: var(--gold-bright); margin-bottom: 26px;
+}
+.hero-title{
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8.5vw, 6.8rem);
+  line-height: .95;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.hero-subtitle{
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+.hero-desc{
+  max-width: 620px;
+  color: var(--text-secondary);
+  font-size: 1.02rem;
+  margin-bottom: 40px;
+}
+.hero-buttons{ display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 56px; }
+.hero-stats{ display: flex; gap: 46px; flex-wrap: wrap; }
+.hero-stats div{ display: flex; flex-direction: column; }
+.hero-stats strong{
+  font-family: var(--font-display); font-size: 2rem; letter-spacing: 1px;
+  background: var(--gradient-accent); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero-stats span{ font-size: .8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+.scroll-indicator{
+  position: absolute; bottom: 34px; left: 50%; transform: translateX(-50%);
+  width: 26px; height: 42px; border: 2px solid var(--border-strong); border-radius: 20px; z-index: 3;
+}
+.scroll-indicator span{
+  position: absolute; top: 8px; left: 50%; width: 4px; height: 8px; margin-left: -2px;
+  background: var(--gold-bright); border-radius: 4px; animation: scrollDot 1.8s infinite;
+}
+@keyframes scrollDot{
+  0%{ transform: translateY(0); opacity: 1; } 70%{ opacity: 0; } 100%{ transform: translateY(14px); opacity: 0; }
+}
+
+/* ============================================================
+   7. ABOUT
+   ============================================================ */
+.about-grid{ display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; align-items: center; }
+.about-visual{ position: relative; }
+.about-frame{
+  border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-soft);
+}
+.frame-topbar{ display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+.frame-dot{ width: 10px; height: 10px; border-radius: 50%; background: var(--border-strong); }
+.frame-dot:nth-child(1){ background: #e0725f; }
+.frame-dot:nth-child(2){ background: var(--gold); }
+.frame-dot:nth-child(3){ background: #6fbf73; }
+.frame-label{ margin-left: 10px; font-size: .75rem; color: var(--text-muted); letter-spacing: .5px; }
+.timeline-track{
+  height: 44px; border-radius: 8px; background: var(--bg-surface-2); position: relative;
+  margin-bottom: 10px; overflow: hidden; display: flex; align-items: center; gap: 4px; padding: 0 6px;
+}
+.clip{ height: 28px; border-radius: 5px; }
+.clip.g1{ width: 22%; background: var(--gradient-gold); }
+.clip.g2{ width: 34%; background: var(--gradient-blue); }
+.clip.g3{ width: 16%; background: var(--bg-surface); border: 1px solid var(--border-strong); }
+.clip.g4{ width: 20%; background: var(--gradient-gold); opacity: .6; }
+.waveform{ height: 30px; display: flex; align-items: flex-end; gap: 3px; margin-bottom: 10px; padding: 0 6px; }
+.waveform span{ width: 4px; background: var(--blue); border-radius: 2px; opacity: .7; }
+.playhead-row{ display:flex; align-items:center; gap:10px; margin-top: 18px; }
+.playhead-line{ flex: 1; height: 2px; background: var(--border-soft); position: relative; border-radius: 2px; overflow: hidden;}
+.playhead-line::after{ content:''; position:absolute; left:38%; top:-5px; bottom:-5px; width:2px; background: var(--gold-bright); box-shadow: 0 0 8px var(--gold-bright); }
+.playhead-time{ font-size: .72rem; color: var(--text-muted); letter-spacing: .5px; }
+
+.exp-badge{
+  position: absolute; bottom: -26px; right: -18px;
+  background: var(--bg-surface); border: 1px solid var(--gold); border-radius: var(--radius-md);
+  padding: 18px 22px; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow-gold);
+}
+.exp-badge strong{ font-family: var(--font-display); font-size: 2.2rem; color: var(--gold-bright); }
+.exp-badge span{ font-size: .74rem; color: var(--text-secondary); line-height: 1.3; }
+
+.about-content p{ color: var(--text-secondary); margin-bottom: 18px; }
+.about-points{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+.about-point{ display: flex; align-items: center; gap: 12px; font-size: .92rem; font-weight: 500; }
+.about-point i{ color: var(--gold-bright); font-size: 1rem; }
+
+/* ============================================================
+   8. SERVICES
+   ============================================================ */
+.services-grid{
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px;
+}
+.service-card{
+  padding: 34px 28px; border-radius: var(--radius-md);
+  background: var(--bg-surface); border: 1px solid var(--border-soft);
+  position: relative; overflow: hidden; transition: var(--transition);
+}
+.service-card::before{
+  content:''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--gradient-accent); transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease);
+}
+.service-card:hover{ transform: translateY(-8px); border-color: var(--border-strong); box-shadow: var(--shadow-soft); }
+.service-card:hover::before{ transform: scaleX(1); }
+.service-icon{
+  width: 58px; height: 58px; border-radius: 16px;
+  background: var(--gold-dim); display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; color: var(--gold-bright); margin-bottom: 22px; transition: var(--transition);
+}
+.service-card:hover .service-icon{ background: var(--gradient-gold); color: #171006; transform: rotate(-6deg) scale(1.05); }
+.service-card h3{ font-size: 1.12rem; margin-bottom: 10px; }
+.service-card p{ font-size: .9rem; color: var(--text-secondary); }
+
+/* ============================================================
+   9. PORTFOLIO
+   ============================================================ */
+.portfolio-filter{
+  display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 44px;
+}
+.filter-btn{
+  padding: 10px 20px; border-radius: 100px; font-size: .85rem; font-weight: 500;
+  background: var(--bg-surface); border: 1px solid var(--border-soft); color: var(--text-secondary);
+  transition: var(--transition);
+}
+.filter-btn:hover{ color: var(--text-primary); border-color: var(--border-strong); }
+.filter-btn.active{ background: var(--gradient-gold); color: #171006; border-color: transparent; }
+
+.portfolio-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
+.portfolio-card{
+  border-radius: var(--radius-md); overflow: hidden; background: var(--bg-surface);
+  border: 1px solid var(--border-soft); transition: var(--transition);
+}
+.portfolio-card:hover{ transform: translateY(-6px); border-color: var(--border-strong); box-shadow: var(--shadow-soft); }
+.portfolio-card.hide{ display: none; }
+.portfolio-thumb{ position: relative; aspect-ratio: 16/10; overflow: hidden; background: var(--bg-surface-2); }
+.portfolio-thumb img{ width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.portfolio-card:hover .portfolio-thumb img{ transform: scale(1.08); }
+.thumb-overlay{
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(180deg, rgba(6,6,7,0.05) 40%, rgba(6,6,7,0.9) 100%);
+  opacity: 0; transition: opacity .4s var(--ease);
+}
+.portfolio-card:hover .thumb-overlay{ opacity: 1; }
+.play-btn{
+  width: 62px; height: 62px; border-radius: 50%; background: var(--gradient-gold);
+  display: flex; align-items: center; justify-content: center; color: #171006; font-size: 1.2rem;
+  transform: scale(.75); transition: transform .4s var(--ease); box-shadow: var(--shadow-gold);
+}
+.portfolio-card:hover .play-btn{ transform: scale(1); }
+.play-btn:hover{ filter: brightness(1.1); }
+.portfolio-tag{
+  position: absolute; top: 14px; left: 14px; z-index: 2;
+  background: rgba(6,6,7,0.72); backdrop-filter: blur(8px);
+  padding: 6px 14px; border-radius: 30px; font-size: .68rem; font-weight: 600;
+  letter-spacing: .6px; text-transform: uppercase; color: var(--gold-bright); border: 1px solid var(--border-soft);
+}
+.portfolio-body{ padding: 24px; }
+.portfolio-body h3{ font-size: 1.08rem; margin-bottom: 8px; }
+.portfolio-body p{ font-size: .87rem; color: var(--text-secondary); margin-bottom: 16px; }
+.watch-btn{
+  display: inline-flex; align-items: center; gap: 8px; font-size: .87rem; font-weight: 600; color: var(--blue-bright);
+}
+.watch-btn i{ font-size: .78rem; transition: transform .3s var(--ease); }
+.watch-btn:hover i{ transform: translate(3px, -3px); }
+
+/* ============================================================
+   10. SKILLS
+   ============================================================ */
+.skills-grid-wrap{ display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: start; }
+.skills-intro p{ color: var(--text-secondary); }
+.skill-item{ margin-bottom: 28px; }
+.skill-item:last-child{ margin-bottom: 0; }
+.skill-item-head{ display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: 500; font-size: .95rem; }
+.skill-item-head .skill-percent{ color: var(--gold-bright); font-weight: 600; }
+.skill-track{
+  height: 9px; border-radius: 20px; background: var(--bg-surface-2); border: 1px solid var(--border-soft); overflow: hidden;
+}
+.skill-fill{ height: 100%; width: 0%; border-radius: 20px; background: var(--gradient-accent); transition: width 1.6s var(--ease); }
+
+/* ============================================================
+   11. WHY CHOOSE ME
+   ============================================================ */
+.why-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 22px; }
+.why-card{
+  padding: 30px 26px; border-radius: var(--radius-md); background: var(--bg-surface);
+  border: 1px solid var(--border-soft); transition: var(--transition); position: relative;
+}
+.why-card:hover{ transform: translateY(-6px); border-color: var(--blue); box-shadow: var(--shadow-blue); }
+.why-icon{
+  width: 50px; height: 50px; border-radius: 50%; background: var(--blue-dim); color: var(--blue-bright);
+  display: flex; align-items: center; justify-content: center; font-size: 1.15rem; margin-bottom: 18px;
+}
+.why-card h3{ font-size: 1.02rem; margin-bottom: 8px; }
+.why-card p{ font-size: .86rem; color: var(--text-secondary); }
+
+/* ============================================================
+   12. TESTIMONIALS
+   ============================================================ */
+.testimonials-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 26px; }
+.testimonial-card{ padding: 34px; border-radius: var(--radius-md); background: var(--bg-surface); border: 1px solid var(--border-soft); }
+.quote-icon{ font-size: 1.8rem; color: var(--gold); opacity: .55; margin-bottom: 16px; }
+.stars{ margin-bottom: 16px; color: var(--gold-bright); font-size: .85rem; letter-spacing: 2px; }
+.testimonial-text{ color: var(--text-secondary); font-size: .95rem; margin-bottom: 26px; }
+.testimonial-author{ display: flex; align-items: center; gap: 14px; }
+.author-avatar{
+  width: 46px; height: 46px; border-radius: 50%; background: var(--gradient-blue);
+  display: flex; align-items: center; justify-content: center; font-weight: 700; color: #071019; flex-shrink: 0;
+}
+.author-name strong{ display: block; font-size: .92rem; }
+.author-role{ font-size: .78rem; color: var(--text-muted); }
+
+/* ============================================================
+   13. STATS
+   ============================================================ */
+.stats{ background: var(--bg-surface); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
+.stats-grid{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+.stat-number{
+  font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 3.6rem); letter-spacing: 1px;
+  background: var(--gradient-accent); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.stat-label{ font-size: .82rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 8px; }
+
+/* ============================================================
+   14. CONTACT
+   ============================================================ */
+.contact-grid{ display: grid; grid-template-columns: .9fr 1.1fr; gap: 60px; }
+.contact-info p{ color: var(--text-secondary); margin-bottom: 30px; }
+.contact-list{ margin-bottom: 34px; }
+.contact-list li{ display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+.contact-list .ci-icon{
+  width: 46px; height: 46px; border-radius: 12px; background: var(--gold-dim); color: var(--gold-bright);
+  display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0;
+}
+.contact-list .ci-label{ font-size: .76rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; }
+.contact-list .ci-value{ font-weight: 500; }
+.social-row{ display: flex; gap: 14px; flex-wrap: wrap; }
+.social-btn{
+  width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: var(--bg-surface); border: 1px solid var(--border-soft); transition: var(--transition); font-size: 1.05rem;
+}
+.social-btn:hover{ background: var(--gradient-accent); color: #0c0c10; transform: translateY(-4px); border-color: transparent; }
+
+.contact-form{ padding: 40px; border-radius: var(--radius-lg); }
+.form-group{ margin-bottom: 20px; }
+.form-group label{ display: block; font-size: .84rem; margin-bottom: 8px; color: var(--text-secondary); }
+.form-group input, .form-group textarea{
+  width: 100%; padding: 14px 16px; border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.03); border: 1px solid var(--border-soft); color: var(--text-primary);
+  font-size: .92rem; transition: var(--transition); resize: vertical;
+}
+.form-group input:focus, .form-group textarea:focus{
+  outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px var(--gold-dim);
+}
+.form-group textarea{ min-height: 130px; }
+.form-status{ margin-top: 16px; font-size: .87rem; min-height: 20px; }
+.form-status.success{ color: #7fd996; }
+.form-status.error{ color: #e0725f; }
+.btn-primary.is-loading{ opacity: .75; pointer-events: none; }
+.btn-primary .fa-spinner{ display: none; }
+.btn-primary.is-loading .fa-spinner{ display: inline-block; animation: spin 0.8s linear infinite; }
+.btn-primary.is-loading .btn-text-default{ display: none; }
+@keyframes spin{ to{ transform: rotate(360deg); } }
+
+/* ============================================================
+   15. FOOTER
+   ============================================================ */
+.footer{ background: var(--black); padding: 64px 0 28px; border-top: 1px solid var(--border-soft); }
+.footer-top{ display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; margin-bottom: 40px; }
+.footer-brand .logo{ margin-bottom: 12px; display: inline-block; }
+.footer-brand p{ color: var(--text-muted); font-size: .88rem; max-width: 280px; }
+.footer-links{ display: flex; gap: 60px; flex-wrap: wrap; }
+.footer-col h4{ font-size: .85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px; color: var(--text-secondary); }
+.footer-col a{ display: block; font-size: .88rem; color: var(--text-muted); margin-bottom: 12px; transition: color .3s; }
+.footer-col a:hover{ color: var(--gold-bright); }
+.footer-divider{ height: 1px; background: var(--border-soft); margin-bottom: 26px; }
+.footer-bottom{ display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; font-size: .8rem; color: var(--text-muted); }
+.footer-bottom a{ color: var(--text-muted); }
+.footer-bottom a:hover{ color: var(--gold-bright); }
+
+/* ============================================================
+   16. SCROLL TO TOP
+   ============================================================ */
+.scroll-top-btn{
+  position: fixed; bottom: 28px; right: 28px; width: 50px; height: 50px; border-radius: 50%;
+  background: var(--bg-surface); border: 1px solid var(--gold); color: var(--gold-bright);
+  display: flex; align-items: center; justify-content: center; font-size: 1.05rem;
+  opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition); z-index: 500;
+  box-shadow: var(--shadow-soft);
+}
+.scroll-top-btn.show{ opacity: 1; visibility: visible; transform: translateY(0); }
+.scroll-top-btn:hover{ background: var(--gradient-gold); color: #171006; }
+
+/* ============================================================
+   17. RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px){
+  .about-grid, .skills-grid-wrap, .contact-grid{ grid-template-columns: 1fr; gap: 50px; }
+  .stats-grid{ grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+}
+
+@media (max-width: 860px){
+  .nav-links{
+    position: fixed; top: 0; right: 0; height: 100vh; width: min(78vw, 340px);
+    background: rgba(10,10,13,0.98); backdrop-filter: blur(20px);
+    flex-direction: column; justify-content: center; gap: 30px;
+    transform: translateX(100%); transition: transform .45s var(--ease);
+    border-left: 1px solid var(--border-soft);
+  }
+  .nav-links.active{ transform: translateX(0); }
+  .nav-cta{ order: 99; }
+  .nav-toggle{ display: flex; }
+}
+
+@media (max-width: 640px){
+  .section{ padding-block: 64px; }
+  .hero{ padding-top: 110px; text-align: left; }
+  .hero-stats{ gap: 30px; }
+  .about-points{ grid-template-columns: 1fr; }
+  .exp-badge{ right: 0; bottom: -20px; padding: 14px 18px; }
+  .stats-grid{ grid-template-columns: repeat(2, 1fr); }
+  .contact-form{ padding: 26px; }
+  .footer-top{ flex-direction: column; }
+  .footer-links{ gap: 34px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     LOADING SCREEN
+     ============================================================ -->
+<div class="loader" id="loader" role="status" aria-label="Loading">
+  <div class="loader-content">
+    <div class="loader-logo">RS<span>.</span></div>
+    <div class="loader-bar-track"><div class="loader-bar-fill" id="loaderBarFill"></div></div>
+    <div class="loader-text">Rendering Experience <span id="loaderPercent">0%</span></div>
+  </div>
+</div>
+
+<!-- Cinematic scroll progress, styled like an editor's timeline scrubber -->
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-fill" id="scrollProgressFill"></div></div>
+
+<!-- ============================================================
+     NAVIGATION — EDIT: change "RAJSHIVA.STUDIO" to your name/brand
+     ============================================================ -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="logo">RAJSHIVA<span class="logo-dot">.</span>STUDIO</a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#why-me" class="nav-link">Why Me</a>
+      <a href="#testimonials" class="nav-link">Reviews</a>
+      <a href="#contact" class="nav-link nav-cta">Hire Me</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============================================================
+     1. HERO
+     ============================================================ -->
+<section class="hero" id="home">
+  <div class="cine-bar cine-bar-top" aria-hidden="true"></div>
+  <div class="cine-bar cine-bar-bottom" aria-hidden="true"></div>
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-blob blob-gold"></div>
+    <div class="hero-blob blob-blue"></div>
+  </div>
+
+  <div class="container hero-content">
+    <span class="eyebrow reveal"><i class="fa-solid fa-clapperboard"></i>&nbsp; Freelance Video Editor</span>
+    <h1 class="hero-title reveal">Professional<br><span class="gradient-text">Video Editor</span></h1>
+    <p class="hero-subtitle reveal">Creating Cinematic, Viral &amp; High-Converting Videos</p>
+    <p class="hero-desc reveal">
+      I edit YouTube videos, Shorts, Reels, Commercials, Podcasts, Gaming videos, Vlogs and
+      Social Media content — turning raw footage into polished, story-driven videos that hold
+      attention, grow channels, and convert viewers into customers.
+    </p>
+    <div class="hero-buttons reveal">
+      <a href="#contact" class="btn btn-primary">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#portfolio" class="btn btn-secondary"><i class="fa-solid fa-play"></i> Watch My Work</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div><strong data-count="100" data-suffix="+">0</strong><span>Projects Edited</span></div>
+      <div><strong data-count="50" data-suffix="+">0</strong><span>Happy Clients</span></div>
+      <div><strong data-count="5" data-suffix="M+">0</strong><span>Views Generated</span></div>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-indicator" aria-label="Scroll to About section"><span></span></a>
+</section>
+
+<div class="film-strip" aria-hidden="true"></div>
+
+<!-- ============================================================
+     2. ABOUT ME
+     ============================================================ -->
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <div class="about-frame glass">
+        <div class="frame-topbar">
+          <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+          <span class="frame-label">Timeline — FinalCut_Master.prproj</span>
+        </div>
+        <div class="timeline-track">
+          <div class="clip g1"></div><div class="clip g2"></div><div class="clip g3"></div><div class="clip g4"></div>
+        </div>
+        <div class="waveform" id="waveform" aria-hidden="true"></div>
+        <div class="playhead-row">
+          <span class="playhead-time">00:12</span>
+          <div class="playhead-line"></div>
+          <span class="playhead-time">03:47</span>
+        </div>
+      </div>
+      <div class="exp-badge">
+        <strong data-count="3" data-suffix="+">0</strong>
+        <span>Years of<br>Experience</span>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <span class="section-tag reveal">About Me</span>
+      <h2 class="section-title reveal">Turning Raw Footage Into <span class="gradient-text">Scroll-Stopping Stories</span></h2>
+      <p class="reveal">
+        I'm the editor behind Rajshiva Studio, working with creators, brands and businesses that want
+        their content to actually get watched. Over the past few years I've cut everything from
+        fast-paced YouTube videos and viral Shorts to cinematic brand films and long-form podcasts —
+        always with a focus on pacing, sound design and story structure.
+      </p>
+      <p class="reveal">
+        What sets my process apart is a genuine obsession with storytelling and detail: every cut,
+        transition and color grade is a deliberate choice, not a default. Combine that with fast
+        turnaround times and clear communication, and the result is consistently high client
+        satisfaction, on-time delivery, and videos that perform.
+      </p>
+      <div class="about-points reveal">
+        <div class="about-point"><i class="fa-solid fa-bolt"></i> Fast Delivery</div>
+        <div class="about-point"><i class="fa-solid fa-wand-magic-sparkles"></i> Creative Storytelling</div>
+        <div class="about-point"><i class="fa-solid fa-film"></i> Cinematic Quality</div>
+        <div class="about-point"><i class="fa-solid fa-heart"></i> Client Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. MY SERVICES
+     ============================================================ -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-tag">What I Do</span>
+      <h2 class="section-title">My <span class="gradient-text">Services</span></h2>
+      <p class="section-desc">Full-service video editing tailored to the platform, the audience, and the goal — from a 15-second Reel to a 40-minute podcast episode.</p>
+    </div>
+
+    <div class="services-grid stagger-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-brands fa-youtube"></i></div>
+        <h3>YouTube Video Editing</h3>
+        <p>Retention-focused edits with pacing, pattern interrupts and sound design built for long-form watch time.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
+        <h3>Shorts &amp; Reels</h3>
+        <p>Punchy, thumb-stopping vertical edits designed to hook viewers in the first second and hold them to the end.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-brands fa-instagram"></i></div>
+        <h3>Instagram Videos</h3>
+        <p>On-brand feed and Story content — clean captions, trending audio sync, and scroll-stopping visuals.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-microphone"></i></div>
+        <h3>Podcasts</h3>
+        <p>Multi-cam switching, clean audio, chapter markers and clip-ready highlights for long-form episodes.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-gamepad"></i></div>
+        <h3>Gaming Videos</h3>
+        <p>High-energy montages, killcams, overlays and sound effects that match the intensity of gameplay.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-clapperboard"></i></div>
+        <h3>Cinematic Editing</h3>
+        <p>Film-style pacing, transitions and grading for wedding films, brand stories and narrative pieces.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-shapes"></i></div>
+        <h3>Motion Graphics</h3>
+        <p>Custom titles, lower-thirds, logo animations and kinetic typography that elevate production value.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+        <h3>Color Grading</h3>
+        <p>Mood-driven, cinema-grade color correction and grading for a consistent, premium visual identity.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-image"></i></div>
+        <h3>Thumbnail Design</h3>
+        <p>High-CTR thumbnail design that stops the scroll and gets your video clicked, not just watched.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-share-nodes"></i></div>
+        <h3>Social Media Content</h3>
+        <p>Repurposed clips, captions and multi-platform formatting so one shoot fuels a full content calendar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="film-strip" aria-hidden="true"></div>
+
+<!-- ============================================================
+     4. PORTFOLIO SHOWCASE
+     EDIT: replace each data-video link with your real YouTube URL,
+     and swap each <img src> with your own thumbnail image.
+     ============================================================ -->
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-tag">Selected Work</span>
+      <h2 class="section-title">Portfolio <span class="gradient-text">Showcase</span></h2>
+      <p class="section-desc">A sample of recent edits across platforms and formats. Click any card to watch the full video.</p>
+    </div>
+
+    <div class="portfolio-filter reveal" id="portfolioFilter" role="tablist" aria-label="Filter portfolio by category">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="youtube">YouTube</button>
+      <button class="filter-btn" data-filter="shorts">Shorts &amp; Reels</button>
+      <button class="filter-btn" data-filter="social">Social Media</button>
+      <button class="filter-btn" data-filter="podcast">Podcasts</button>
+      <button class="filter-btn" data-filter="gaming">Gaming</button>
+      <button class="filter-btn" data-filter="cinematic">Cinematic</button>
+      <button class="filter-btn" data-filter="commercial">Commercial</button>
+    </div>
+
+    <div class="portfolio-grid stagger-grid" id="portfolioGrid">
+
+      <!-- Video 1 -->
+      <article class="portfolio-card reveal" data-category="youtube">
+        <div class="portfolio-thumb">
+          <span class="portfolio-tag">Documentary Editing</span>
+          <img src="https://img.youtube.com/vi/Hlq2unt9JH0/maxresdefault.jpg" alt="Sonam Wangchuk vs the Government — thumbnail" loading="lazy" width="1280" height="720">
+          <div class="thumb-overlay">
+            <button class="play-btn" data-video="https://youtu.be/Hlq2unt9JH0" aria-label="Watch Sonam Wangchuk vs the Government"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>Sonam Wangchuk vs the Government</h3>
+          <p>Documentary-style edit weaving archival clips, news footage and motion titles into a clear, information-heavy story that keeps moving.</p>
+          <a href="https://youtu.be/Hlq2unt9JH0" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Video 2 -->
+      <article class="portfolio-card reveal" data-category="shorts">
+        <div class="portfolio-thumb">
+          <span class="portfolio-tag">Shorts &amp; Reels</span>
+          <img src="https://img.youtube.com/vi/MCkjmOWWr0I/maxresdefault.jpg" alt="Phone Scroll Habit Ka Secret Formula — Atomic Habits Day 5 thumbnail" loading="lazy" width="1280" height="720">
+          <div class="thumb-overlay">
+            <button class="play-btn" data-video="https://youtube.com/shorts/MCkjmOWWr0I" aria-label="Watch Phone Scroll Habit Ka Secret Formula"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>Phone Scroll Habit Ka Secret Formula</h3>
+          <p>Vertical Short from the Atomic Habits series — built on a one-second hook, punchy captions and rapid-fire cuts that hold to the last frame.</p>
+          <a href="https://youtube.com/shorts/MCkjmOWWr0I" target="_blank" rel="noopener" class="watch-btn">Watch Short <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Video 3 -->
+      <article class="portfolio-card reveal" data-category="social">
+        <div class="portfolio-thumb">
+          <span class="portfolio-tag">Instagram Reel</span>
+          <!-- EDIT: Instagram blocks thumbnail hotlinking. Save a cover frame from the
+               reel as e.g. reel-cover.jpg next to this file and swap the src below. -->
+          <img src="https://placehold.co/600x400/141418/d4a94f?text=Instagram+Reel" alt="Aayi Badi Chor — Instagram gym comedy reel thumbnail" loading="lazy" width="600" height="400">
+          <div class="thumb-overlay">
+            <button class="play-btn" data-video="https://www.instagram.com/reel/DaHyADxJWwj/" aria-label="Watch Aayi Badi Chor Instagram reel"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>Aayi Badi Chor — Gym Comedy Reel</h3>
+          <p>Fast, comedic Instagram reel cut to trending audio with snappy timing and beat-matched captions built for the feed.</p>
+          <a href="https://www.instagram.com/reel/DaHyADxJWwj/" target="_blank" rel="noopener" class="watch-btn">Watch on Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Video 4 -->
+      <article class="portfolio-card reveal" data-category="podcast">
+        <div class="portfolio-thumb">
+          <span class="portfolio-tag">Podcast Editing</span>
+          <img src="https://placehold.co/600x400/141418/3fa9f5?text=Podcast+Episode" alt="The Grind Podcast Episode 24 — thumbnail" loading="lazy" width="600" height="400">
+          <div class="thumb-overlay">
+            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_4" aria-label="Watch The Grind Podcast Episode 24"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>The Grind Podcast — Episode 24</h3>
+          <p>Multi-cam podcast edit with clean audio leveling, chapter markers and social-ready highlight clips.</p>
+          <a href="https://youtube.com/watch?v=EDIT_LINK_4" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Video 5 -->
+      <article class="portfolio-card reveal" data-category="gaming">
+        <div class="portfolio-thumb">
+          <span class="portfolio-tag">Gaming Videos</span>
+          <img src="https://placehold.co/600x400/141418/d4a94f?text=Gaming+Montage" alt="Epic Gaming Montage Valorant Highlights — thumbnail" loading="lazy" width="600" height="400">
+          <div class="thumb-overlay">
+            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_5" aria-label="Watch Epic Gaming Montage"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>Epic Gaming Montage: Highlights Reel</h3>
+          <p>High-octane killcam montage with synced impact sound design, glitch transitions and dynamic overlays.</p>
+          <a href="https://youtube.com/watch?v=EDIT_LINK_5" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Video 6 -->
+      <article class="portfolio-card reveal" data-category="cinematic">
+        <div class="portfolio-thumb">
+          <span class="portfolio-tag">Cinematic Editing</span>
+          <img src="https://placehold.co/600x400/141418/3fa9f5?text=Wedding+Film" alt="A Cinematic Love Story wedding film — thumbnail" loading="lazy" width="600" height="400">
+          <div class="thumb-overlay">
+            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_6" aria-label="Watch A Cinematic Love Story"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>Wedding Film — A Cinematic Love Story</h3>
+          <p>Emotion-first storytelling with film-grade color, slow pacing and a custom score to match the moment.</p>
+          <a href="https://youtube.com/watch?v=EDIT_LINK_6" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Video 7 -->
+      <article class="portfolio-card reveal" data-category="commercial">
+        <div class="portfolio-thumb">
+          <span class="portfolio-tag">Motion Graphics</span>
+          <img src="https://placehold.co/600x400/141418/d4a94f?text=Motion+Graphics" alt="Product Launch Motion Graphics Reel — thumbnail" loading="lazy" width="600" height="400">
+          <div class="thumb-overlay">
+            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_7" aria-label="Watch Product Launch Motion Graphics Reel"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>Product Launch Motion Graphics Reel</h3>
+          <p>Custom kinetic typography and animated product reveals built to introduce a brand's new launch.</p>
+          <a href="https://youtube.com/watch?v=EDIT_LINK_7" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Video 8 -->
+      <article class="portfolio-card reveal" data-category="cinematic">
+        <div class="portfolio-thumb">
+          <span class="portfolio-tag">Color Grading</span>
+          <img src="https://placehold.co/600x400/141418/3fa9f5?text=Color+Grading" alt="Color Grading Breakdown Teal and Orange Look — thumbnail" loading="lazy" width="600" height="400">
+          <div class="thumb-overlay">
+            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_8" aria-label="Watch Color Grading Breakdown"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>Color Grading Breakdown: Teal &amp; Orange</h3>
+          <p>A before-and-after grading breakdown showing how mood and contrast were built in DaVinci Resolve.</p>
+          <a href="https://youtube.com/watch?v=EDIT_LINK_8" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Video 9 -->
+      <article class="portfolio-card reveal" data-category="commercial">
+        <div class="portfolio-thumb">
+          <span class="portfolio-tag">Commercial Editing</span>
+          <img src="https://placehold.co/600x400/141418/d4a94f?text=TV+Commercial" alt="30 Second TV Commercial Sneaker Brand — thumbnail" loading="lazy" width="600" height="400">
+          <div class="thumb-overlay">
+            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_9" aria-label="Watch 30-Second TV Commercial"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>30-Sec TV Commercial — Sneaker Brand</h3>
+          <p>High-impact commercial cut built for broadcast and paid social, timed precisely to a 30-second slot.</p>
+          <a href="https://youtube.com/watch?v=EDIT_LINK_9" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Video 10 -->
+      <article class="portfolio-card reveal" data-category="youtube">
+        <div class="portfolio-thumb">
+          <span class="portfolio-tag">Story / True Crime</span>
+          <img src="https://img.youtube.com/vi/q8fBy6NPPN8/maxresdefault.jpg" alt="17 Crore Ki Shaadi Thi — Real Crime Story thumbnail" loading="lazy" width="1280" height="720">
+          <div class="thumb-overlay">
+            <button class="play-btn" data-video="https://youtu.be/q8fBy6NPPN8" aria-label="Watch 17 Crore Ki Shaadi Thi — Real Crime Story"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>17 Crore Ki Shaadi Thi… Par Dulha Wapas Nahi Aaya</h3>
+          <p>Suspense-driven true crime edit — layered sound design, tight reveals and cliffhanger pacing that hold viewers to the final twist.</p>
+          <a href="https://youtu.be/q8fBy6NPPN8" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Video 11 -->
+      <article class="portfolio-card reveal" data-category="social">
+        <div class="portfolio-thumb">
+          <span class="portfolio-tag">Social Media Content</span>
+          <img src="https://placehold.co/600x400/141418/d4a94f?text=Brand+Story" alt="Corporate Brand Story Tech Startup — thumbnail" loading="lazy" width="600" height="400">
+          <div class="thumb-overlay">
+            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_11" aria-label="Watch Corporate Brand Story"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>Corporate Brand Story — Tech Startup</h3>
+          <p>A concise brand story edited from interview footage, built to introduce a startup's mission and team.</p>
+          <a href="https://youtube.com/watch?v=EDIT_LINK_11" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <!-- Video 12 -->
+      <article class="portfolio-card reveal" data-category="cinematic">
+        <div class="portfolio-thumb">
+          <span class="portfolio-tag">Music Video</span>
+          <img src="https://placehold.co/600x400/141418/3fa9f5?text=Music+Video" alt="Music Video Edit Indie Artist Visualizer — thumbnail" loading="lazy" width="600" height="400">
+          <div class="thumb-overlay">
+            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_12" aria-label="Watch Music Video Edit"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>Music Video Edit — Indie Artist Visualizer</h3>
+          <p>Beat-synced cuts, kinetic lyric overlays and stylized grading built to match an indie single's mood.</p>
+          <a href="https://youtube.com/watch?v=EDIT_LINK_12" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. SKILLS
+     ============================================================ -->
+<section class="section skills" id="skills">
+  <div class="container skills-grid-wrap">
+    <div class="skills-intro">
+      <span class="section-tag reveal">Expertise</span>
+      <h2 class="section-title reveal">Tools I <span class="gradient-text">Master</span></h2>
+      <p class="reveal">Years of hands-on editing across the industry's leading software — used daily, not just listed on a résumé.</p>
+    </div>
+
+    <div class="skills-list">
+      <div class="skill-item reveal">
+        <div class="skill-item-head"><span>Adobe Premiere Pro</span><span class="skill-percent">95%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-percent="95"></div></div>
+      </div>
+      <div class="skill-item reveal">
+        <div class="skill-item-head"><span>Adobe After Effects</span><span class="skill-percent">90%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-percent="90"></div></div>
+      </div>
+      <div class="skill-item reveal">
+        <div class="skill-item-head"><span>DaVinci Resolve</span><span class="skill-percent">92%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-percent="92"></div></div>
+      </div>
+      <div class="skill-item reveal">
+        <div class="skill-item-head"><span>CapCut</span><span class="skill-percent">88%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-percent="88"></div></div>
+      </div>
+      <div class="skill-item reveal">
+        <div class="skill-item-head"><span>Photoshop</span><span class="skill-percent">85%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-percent="85"></div></div>
+      </div>
+      <div class="skill-item reveal">
+        <div class="skill-item-head"><span>Motion Graphics</span><span class="skill-percent">90%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-percent="90"></div></div>
+      </div>
+      <div class="skill-item reveal">
+        <div class="skill-item-head"><span>Color Grading</span><span class="skill-percent">93%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-percent="93"></div></div>
+      </div>
+      <div class="skill-item reveal">
+        <div class="skill-item-head"><span>Sound Design</span><span class="skill-percent">87%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-percent="87"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="film-strip" aria-hidden="true"></div>
+
+<!-- ============================================================
+     6. WHY CHOOSE ME
+     ============================================================ -->
+<section class="section why-me" id="why-me">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-tag">The Difference</span>
+      <h2 class="section-title">Why Choose <span class="gradient-text">Me</span></h2>
+      <p class="section-desc">Editing is only half the job — reliability, communication and craftsmanship make up the rest.</p>
+    </div>
+
+    <div class="why-grid stagger-grid">
+      <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-bolt"></i></div><h3>Fast Delivery</h3><p>Clear timelines and quick turnarounds without cutting corners.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-rotate"></i></div><h3>Unlimited Revisions</h3><p>We refine the edit together until it's exactly right.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-medal"></i></div><h3>Professional Quality</h3><p>Broadcast-ready polish on every single delivered project.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-clapperboard"></i></div><h3>Cinematic Editing</h3><p>Film-grade pacing, grading and composition on every cut.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-book-open"></i></div><h3>Storytelling</h3><p>Every edit is structured around a clear narrative arc.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3>Creative Effects</h3><p>Custom transitions, overlays and motion that stand out.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-face-smile"></i></div><h3>High Client Satisfaction</h3><p>A track record of long-term, repeat collaborations.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-tag"></i></div><h3>Affordable Pricing</h3><p>Premium quality delivered at fair, transparent rates.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     7. CLIENT TESTIMONIALS
+     ============================================================ -->
+<section class="section testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-tag">Client Feedback</span>
+      <h2 class="section-title">What Clients <span class="gradient-text">Say</span></h2>
+      <p class="section-desc">A few words from creators and brands I've worked with.</p>
+    </div>
+
+    <div class="testimonials-grid stagger-grid">
+      <div class="testimonial-card reveal">
+        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Rajshiva Studio completely transformed our raw footage into something we were proud to post. Retention on our channel jumped almost overnight, and turnaround was faster than any editor we'd used before.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RC</div>
+          <div class="author-name"><strong>Ryan Coleman</strong><span class="author-role">YouTuber, 500K Subscribers</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Working with Rajshiva Studio felt effortless. They understood our brand voice immediately and delivered social content that consistently outperformed what our in-house team produced.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SM</div>
+          <div class="author-name"><strong>Sara Malik</strong><span class="author-role">Marketing Lead, Lumora</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Our podcast finally looks and sounds as good as it should. Rajshiva Studio handles the multi-cam edit, the clips, and even the thumbnails — one less thing for us to think about every week.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">DB</div>
+          <div class="author-name"><strong>Devon Blake</strong><span class="author-role">Host, The Grind Podcast</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     8. STATISTICS COUNTER
+     ============================================================ -->
+<section class="stats section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number"><span data-count="100" data-suffix="+">0</span></div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number"><span data-count="50" data-suffix="+">0</span></div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number"><span data-count="5" data-suffix="M+">0</span></div>
+        <div class="stat-label">Views Generated</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number"><span data-count="3" data-suffix="+">0</span></div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     9. CONTACT — EDIT: replace placeholder links/handles below
+     ============================================================ -->
+<section class="section contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <span class="section-tag reveal">Get In Touch</span>
+      <h2 class="section-title reveal">Let's Create Something <span class="gradient-text">Great Together</span></h2>
+      <p class="reveal">Have a project in mind? Send over the details and I'll get back to you within 24 hours with next steps and availability.</p>
+
+      <ul class="contact-list reveal">
+        <li>
+          <span class="ci-icon"><i class="fa-solid fa-envelope"></i></span>
+          <span><span class="ci-label">Email</span><br><a href="mailto:rajshivastudio@gmail.com" class="ci-value">rajshivastudio@gmail.com</a></span>
+        </li>
+        <li>
+          <span class="ci-icon"><i class="fa-brands fa-whatsapp"></i></span>
+          <span><span class="ci-label">WhatsApp</span><br><a href="https://wa.me/917292802669" target="_blank" rel="noopener" class="ci-value">+91 72928 02669</a></span>
+        </li>
+        <li>
+          <span class="ci-icon"><i class="fa-solid fa-phone"></i></span>
+          <span><span class="ci-label">Phone</span><br><a href="tel:+919939669085" class="ci-value">+91 99396 69085</a></span>
+        </li>
+        <li>
+          <span class="ci-icon"><i class="fa-solid fa-globe"></i></span>
+          <span><span class="ci-label">Availability</span><br><span class="ci-value">Remote — Worldwide</span></span>
+        </li>
+      </ul>
+
+      <div class="social-row reveal">
+        <a href="https://wa.me/917292802669" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://instagram.com/yourusername" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:rajshivastudio@gmail.com" class="social-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <!-- Submissions are sent to rajshivastudio@gmail.com via Web3Forms.
+         EDIT: paste your access key into WEB3FORMS_KEY in the script at the
+         bottom of this file — the form stays disabled until you do. -->
+    <form class="contact-form glass reveal" id="contactForm" novalidate>
+      <!-- Honeypot: hidden from humans, spam bots tick it and get rejected -->
+      <input type="checkbox" name="botcheck" id="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="details">Project Details</label>
+        <textarea id="details" name="details" placeholder="Tell me about your project, timeline and budget..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+        <i class="fa-solid fa-spinner"></i>
+        <span class="btn-text-default">Send Message <i class="fa-solid fa-paper-plane"></i></span>
+      </button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#home" class="logo">RAJSHIVA<span class="logo-dot">.</span>STUDIO</a>
+        <p>Freelance video editor crafting cinematic, viral and high-converting videos for creators and brands.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#services">YouTube Editing</a>
+          <a href="#services">Shorts &amp; Reels</a>
+          <a href="#services">Cinematic Editing</a>
+          <a href="#services">Color Grading</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://instagram.com/yourusername" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Rajshiva Studio. All rights reserved.</span>
+      <span>Designed &amp; built for creators who care about craft.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+/* ============================================================
+   JAVASCRIPT
+   ============================================================ */
+(function(){
+  'use strict';
+
+  /* ---------- 1. Loading screen: simulated render progress ---------- */
+  var loader = document.getElementById('loader');
+  var loaderBarFill = document.getElementById('loaderBarFill');
+  var loaderPercent = document.getElementById('loaderPercent');
+  var hero = document.getElementById('home');
+  var progress = 0;
+
+  var loadInterval = setInterval(function(){
+    progress += Math.random() * 18 + 6;
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(loadInterval);
+      loaderBarFill.style.width = progress + '%';
+      loaderPercent.textContent = '100%';
+      setTimeout(function(){
+        loader.classList.add('hidden');
+        // Open the cinematic letterbox bars shortly after the loader clears
+        setTimeout(function(){ hero.classList.add('opened'); }, 200);
+        // Kick off hero content reveal
+        revealElements(document.querySelectorAll('.hero .reveal'));
+      }, 350);
+      return;
+    }
+    loaderBarFill.style.width = progress + '%';
+    loaderPercent.textContent = Math.floor(progress) + '%';
+  }, 160);
+
+  // Safety net: never let the loader block the page for more than 4s
+  setTimeout(function(){
+    if (!loader.classList.contains('hidden')) {
+      loader.classList.add('hidden');
+      hero.classList.add('opened');
+      revealElements(document.querySelectorAll('.hero .reveal'));
+    }
+  }, 4000);
+
+  /* ---------- 2. Sticky navbar + scroll progress ---------- */
+  var navbar = document.getElementById('navbar');
+  var scrollProgressFill = document.getElementById('scrollProgressFill');
+  var scrollTopBtn = document.getElementById('scrollTopBtn');
+  var navLinkEls = document.querySelectorAll('.nav-link[href^="#"]');
+  var sections = document.querySelectorAll('main section[id]');
+
+  function onScroll(){
+    var scrollY = window.scrollY || document.documentElement.scrollTop;
+
+    // Sticky nav styling
+    navbar.classList.toggle('scrolled', scrollY > 40);
+
+    // Scroll-to-top visibility
+    scrollTopBtn.classList.toggle('show', scrollY > 600);
+
+    // Timeline-style scroll progress bar
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+    scrollProgressFill.style.width = pct + '%';
+
+    // Active nav link based on section in view
+    var current = '';
+    sections.forEach(function(sec){
+      var top = sec.offsetTop - 140;
+      if (scrollY >= top) current = sec.getAttribute('id');
+    });
+    navLinkEls.forEach(function(link){
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  scrollTopBtn.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ---------- 3. Mobile navigation toggle ---------- */
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+
+  navToggle.addEventListener('click', function(){
+    var isActive = navLinks.classList.toggle('active');
+    navToggle.classList.toggle('active', isActive);
+    navToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      navLinks.classList.remove('active');
+      navToggle.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ---------- 4. Scroll-reveal animations ---------- */
+  function revealElements(list){
+    list.forEach(function(el, i){
+      setTimeout(function(){ el.classList.add('in-view'); }, i * 60);
+    });
+  }
+
+  var revealObserver = new IntersectionObserver(function(entries, obs){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function(el){
+    // Hero elements are revealed manually after the loader/curtain sequence
+    if (!el.closest('.hero')) revealObserver.observe(el);
+  });
+
+  /* ---------- 5. Animated stat counters ---------- */
+  function animateCounter(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    var duration = 1800;
+    var startTime = null;
+
+    function step(timestamp){
+      if (!startTime) startTime = timestamp;
+      var elapsed = timestamp - startTime;
+      var progressRatio = Math.min(elapsed / duration, 1);
+      var eased = 1 - Math.pow(1 - progressRatio, 3);
+      var current = Math.floor(eased * target);
+      el.textContent = current + suffix;
+      if (progressRatio < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = target + suffix;
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  var counterObserver = new IntersectionObserver(function(entries, obs){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        animateCounter(entry.target);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    counterObserver.observe(el);
+  });
+
+  /* ---------- 6. Animated skill progress bars ---------- */
+  var skillObserver = new IntersectionObserver(function(entries, obs){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        var fill = entry.target;
+        fill.style.width = fill.getAttribute('data-percent') + '%';
+        obs.unobserve(fill);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('.skill-fill').forEach(function(fill){
+    skillObserver.observe(fill);
+  });
+
+  /* ---------- 7. Portfolio filter ---------- */
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var portfolioCards = document.querySelectorAll('.portfolio-card');
+
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filterBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.getAttribute('data-filter');
+
+      portfolioCards.forEach(function(card){
+        var match = filter === 'all' || card.getAttribute('data-category') === filter;
+        card.classList.toggle('hide', !match);
+      });
+    });
+  });
+
+  /* ---------- 8. Portfolio play buttons -> open YouTube link ---------- */
+  document.querySelectorAll('.play-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var url = btn.getAttribute('data-video');
+      if (url) window.open(url, '_blank', 'noopener');
+    });
+  });
+
+  /* ---------- 9. Contact form (Web3Forms) ---------- */
+  // EDIT: paste your Web3Forms access key between the quotes below.
+  // Get one free at https://web3forms.com — enter rajshivastudio@gmail.com,
+  // and the key is emailed to you. Messages then arrive in that inbox.
+  var WEB3FORMS_KEY = 'PASTE_YOUR_ACCESS_KEY_HERE';
+
+  var form = document.getElementById('contactForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var formStatus = document.getElementById('formStatus');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var details = document.getElementById('details').value.trim();
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!name || !email || !details){
+      formStatus.textContent = 'Please fill in every field before sending.';
+      formStatus.className = 'form-status error';
+      return;
+    }
+    if (!emailPattern.test(email)){
+      formStatus.textContent = 'Please enter a valid email address.';
+      formStatus.className = 'form-status error';
+      return;
+    }
+
+    // Refuse to fake a success message while the key is still a placeholder
+    if (!WEB3FORMS_KEY || WEB3FORMS_KEY.indexOf('PASTE_YOUR') === 0){
+      formStatus.textContent = 'The form isn\'t connected yet — please email rajshivastudio@gmail.com directly.';
+      formStatus.className = 'form-status error';
+      return;
+    }
+
+    submitBtn.classList.add('is-loading');
+    formStatus.textContent = '';
+    formStatus.className = 'form-status';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: 'New project enquiry from ' + name + ' — Rajshiva Studio',
+        from_name: 'Rajshiva Studio Website',
+        name: name,
+        email: email,
+        message: details,
+        botcheck: document.getElementById('botcheck').checked ? 'true' : ''
+      })
+    })
+    .then(function(res){
+      return res.json().then(function(data){ return { ok: res.ok, data: data }; });
+    })
+    .then(function(r){
+      submitBtn.classList.remove('is-loading');
+      if (r.ok && r.data && r.data.success){
+        formStatus.textContent = 'Thanks, ' + name.split(' ')[0] + '! Your message has been sent — I\'ll reply within 24 hours.';
+        formStatus.className = 'form-status success';
+        form.reset();
+      } else {
+        formStatus.textContent = (r.data && r.data.message) ? r.data.message
+          : 'Couldn\'t send your message. Please email rajshivastudio@gmail.com instead.';
+        formStatus.className = 'form-status error';
+      }
+    })
+    .catch(function(){
+      submitBtn.classList.remove('is-loading');
+      formStatus.textContent = 'Network error — please email rajshivastudio@gmail.com instead.';
+      formStatus.className = 'form-status error';
+    });
+  });
+
+  /* ---------- 10. Waveform generator (decorative, About section) ---------- */
+  var waveform = document.getElementById('waveform');
+  if (waveform){
+    var bars = '';
+    for (var i = 0; i < 40; i++){
+      var h = Math.floor(Math.random() * 22) + 6;
+      bars += '<span style="height:' + h + 'px"></span>';
+    }
+    waveform.innerHTML = bars;
+  }
+
+  /* ---------- 11. Footer year ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+})();
+</script>
+</body>
+</html>
