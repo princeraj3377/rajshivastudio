@@ -64,3 +64,13 @@ Before exporting, check the first three seconds against these:
 - Does the video deliver on that reason?
 
 If any answer is no, re-cut the opening. It is the highest-leverage part of the entire edit.
+
+## See it in practice
+
+Here is a Short built around a one-second hook — text on screen immediately, motion from the first frame, and no wasted setup:
+
+{% include youtube.html id="MCkjmOWWr0I" vertical=true caption="Vertical Short — hook lands in the first second" %}
+
+And the same idea in long form, where the opening has to earn a much longer watch:
+
+{% include youtube.html id="Hlq2unt9JH0" caption="Documentary-style edit" %}

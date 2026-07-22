@@ -1,0 +1,26 @@
+{%- comment -%}
+  Responsive YouTube embed for blog posts.
+
+  Normal (16:9) video:
+      {% include youtube.html id="Hlq2unt9JH0" %}
+
+  Vertical Short / Reel (9:16):
+      {% include youtube.html id="MCkjmOWWr0I" vertical=true %}
+
+  Optional caption shown under the player:
+      {% include youtube.html id="Hlq2unt9JH0" caption="Final edit" %}
+
+  The id is the part of the URL after v= or after /shorts/
+{%- endcomment -%}
+<figure class="video-embed-wrap">
+  <div class="video-embed{% if include.vertical %} vertical{% endif %}">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/{{ include.id }}"
+      title="{{ include.title | default: 'YouTube video' }}"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>
