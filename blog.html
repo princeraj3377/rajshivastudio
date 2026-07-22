@@ -72,10 +72,8 @@ permalink: /blog/
 
 <section class="section">
   <div class="container">
-
     {% if site.posts.size > 0 %}
 
-    {%- comment -%} Newest post gets a large featured treatment {%- endcomment -%}
     {% assign featured = site.posts.first %}
     <a href="{{ featured.url | relative_url }}" class="blog-featured reveal">
       <div class="blog-featured-thumb">
@@ -102,7 +100,6 @@ permalink: /blog/
       </div>
     </a>
 
-    {%- comment -%} Everything after the newest post {%- endcomment -%}
     {% if site.posts.size > 1 %}
     <div class="blog-section-head reveal">
       <h2 class="section-title">More <span class="gradient-text">Articles</span></h2>
@@ -138,7 +135,6 @@ permalink: /blog/
     </div>
     {% endif %}
 
-    {%- comment -%} Newsletter-style CTA so the page never feels thin {%- endcomment -%}
     <div class="blog-cta reveal">
       <div>
         <h3>Want the free resource pack too?</h3>
@@ -153,26 +149,6 @@ permalink: /blog/
       <code>_posts</code> folder named <code>YYYY-MM-DD-your-title.md</code>.
     </div>
     {% endif %}
-        </a>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span><i class="fa-regular fa-calendar"></i> {{ post.date | date: "%d %b %Y" }}</span>
-            <span><i class="fa-regular fa-clock"></i> {{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min</span>
-          </div>
-          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-          <p>{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
-          <a href="{{ post.url | relative_url }}" class="watch-btn">Read article <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </article>
-      {% endfor %}
-    </div>
-    {% else %}
-    <div class="res-note">
-      <strong>No posts yet.</strong> Add your first article by creating a file in the
-      <code>_posts</code> folder named <code>YYYY-MM-DD-your-title.md</code>.
-    </div>
-    {% endif %}
-
   </div>
 </section>
 
