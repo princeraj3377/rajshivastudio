@@ -37,7 +37,7 @@
       <a href="{{ '/index.html' | relative_url }}#home" class="nav-link">Home</a>
       <a href="{{ '/index.html' | relative_url }}#portfolio" class="nav-link">Portfolio</a>
       <a href="{{ '/resources.html' | relative_url }}" class="nav-link">Resources</a>
-      <a href="{{ '/blog.html' | relative_url }}" class="nav-link active">Blog</a>
+      <a href="{{ '/blog/' | relative_url }}" class="nav-link active">Blog</a>
       <a href="{{ '/index.html' | relative_url }}#contact" class="nav-link nav-cta">Hire Me</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -55,7 +55,7 @@
       <div class="hero-blob blob-blue"></div>
     </div>
     <div class="container post-header-inner">
-      <a href="{{ '/blog.html' | relative_url }}" class="back-link"><i class="fa-solid fa-arrow-left"></i> All posts</a>
+      <a href="{{ '/blog/' | relative_url }}" class="back-link"><i class="fa-solid fa-arrow-left"></i> All posts</a>
       <h1 class="post-title">{{ page.title }}</h1>
       <div class="post-meta">
         <span><i class="fa-regular fa-calendar"></i> {{ page.date | date: "%d %B %Y" }}</span>
@@ -107,7 +107,7 @@
           <a href="{{ '/index.html' | relative_url }}#about">About</a>
           <a href="{{ '/index.html' | relative_url }}#portfolio">Portfolio</a>
           <a href="{{ '/resources.html' | relative_url }}">Resources</a>
-          <a href="{{ '/blog.html' | relative_url }}">Blog</a>
+          <a href="{{ '/blog/' | relative_url }}">Blog</a>
           <a href="{{ '/index.html' | relative_url }}#contact">Contact</a>
         </div>
         <div class="footer-col">
