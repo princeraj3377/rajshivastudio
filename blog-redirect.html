@@ -1,0 +1,18 @@
+---
+permalink: /blog.html
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Redirecting to the blog…</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{{ '/blog/' | absolute_url }}">
+<meta http-equiv="refresh" content="0; url={{ '/blog/' | relative_url }}">
+<script>window.location.replace("{{ '/blog/' | relative_url }}");</script>
+</head>
+<body>
+<p>The blog has moved. <a href="{{ '/blog/' | relative_url }}">Continue to the blog</a>.</p>
+</body>
+</html>

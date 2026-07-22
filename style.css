@@ -981,3 +981,45 @@ h1,h2,h3,h4{ line-height: 1.15; font-weight: 600; }
   .blog-cta{ padding: 26px 22px; flex-direction: column; align-items: flex-start; }
   .blog-cta .btn{ width: 100%; }
 }
+
+/* ============================================================
+   20. 404 PAGE
+   ============================================================ */
+.error-page{
+  min-height: 100vh; display: flex; align-items: center;
+  position: relative; overflow: hidden; padding: 90px 0;
+}
+.error-inner{ position: relative; z-index: 2; text-align: center; max-width: 720px; }
+.error-logo{
+  width: 96px; height: 96px; border-radius: 50%;
+  margin: 0 auto 26px; border: 1px solid var(--border-soft);
+}
+.error-code{
+  display: block; font-family: var(--font-display);
+  font-size: clamp(4.5rem, 15vw, 9rem); line-height: 1; letter-spacing: 4px;
+  background: var(--gradient-accent); -webkit-background-clip: text; background-clip: text;
+  color: transparent; margin-bottom: 10px;
+}
+.error-title{
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4.5vw, 3rem); letter-spacing: 1px; margin-bottom: 16px;
+}
+.error-lead{ color: var(--text-secondary); font-size: 1.02rem; margin-bottom: 40px; }
+.error-links{
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px; margin-bottom: 38px; text-align: left;
+}
+.error-link{
+  display: flex; align-items: center; gap: 15px;
+  padding: 18px 20px; border-radius: var(--radius-md);
+  background: var(--bg-surface); border: 1px solid var(--border-soft);
+  transition: var(--transition);
+}
+.error-link:hover{ transform: translateY(-4px); border-color: var(--gold); box-shadow: var(--shadow-soft); }
+.error-link i{
+  width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
+  background: var(--gold-dim); color: var(--gold-bright);
+  display: flex; align-items: center; justify-content: center; font-size: 1rem;
+}
+.error-link span{ display: flex; flex-direction: column; font-size: .8rem; color: var(--text-muted); }
+.error-link strong{ font-size: .95rem; color: var(--text-primary); font-weight: 600; margin-bottom: 2px; }

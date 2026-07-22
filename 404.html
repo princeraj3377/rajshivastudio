@@ -1,0 +1,62 @@
+---
+permalink: /404.html
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Page Not Found | Rajshiva Studio</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0a0d">
+<link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/favicon.png' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+</head>
+<body>
+
+<section class="error-page">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-blob blob-gold"></div>
+    <div class="hero-blob blob-blue"></div>
+  </div>
+
+  <div class="container error-inner">
+    <img src="{{ '/logo.jpg' | relative_url }}" alt="Rajshiva Studio" class="error-logo" width="96" height="96">
+    <span class="error-code">404</span>
+    <h1 class="error-title">This Clip Didn't <span class="gradient-text">Make the Cut</span></h1>
+    <p class="error-lead">
+      The page you're looking for has been moved or doesn't exist.
+      Here's where you probably wanted to go.
+    </p>
+
+    <div class="error-links">
+      <a href="{{ '/index.html' | relative_url }}" class="error-link">
+        <i class="fa-solid fa-house"></i>
+        <span><strong>Home</strong>Portfolio and services</span>
+      </a>
+      <a href="{{ '/index.html' | relative_url }}#portfolio" class="error-link">
+        <i class="fa-solid fa-film"></i>
+        <span><strong>Portfolio</strong>Selected editing work</span>
+      </a>
+      <a href="{{ '/resources.html' | relative_url }}" class="error-link">
+        <i class="fa-solid fa-gift"></i>
+        <span><strong>Free Resources</strong>Prompts, sound, presets</span>
+      </a>
+      <a href="{{ '/blog/' | relative_url }}" class="error-link">
+        <i class="fa-solid fa-pen-nib"></i>
+        <span><strong>Blog</strong>Editing tips and guides</span>
+      </a>
+    </div>
+
+    <a href="{{ '/index.html' | relative_url }}#contact" class="btn btn-primary">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</section>
+
+</body>
+</html>
