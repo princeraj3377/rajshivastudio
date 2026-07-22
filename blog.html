@@ -1,0 +1,189 @@
+---
+title: Blog
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Blog | Rajshiva Studio — Video Editing Tips &amp; Tutorials</title>
+<meta name="description" content="Video editing tutorials, workflow tips and behind-the-scenes breakdowns from Rajshiva Studio.">
+<meta name="author" content="Rajshiva Studio">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0a0d">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog | Rajshiva Studio">
+<meta property="og:description" content="Video editing tutorials, workflow tips and behind-the-scenes breakdowns.">
+<meta property="og:site_name" content="Rajshiva Studio — Video Editing">
+<meta property="og:url" content="{{ '/blog.html' | absolute_url }}">
+<meta property="og:image" content="{{ '/logo.jpg' | absolute_url }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ '/logo.jpg' | absolute_url }}">
+<!-- Favicon / touch icon -->
+<link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/favicon.png' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-fill" id="scrollProgressFill"></div></div>
+
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="{{ '/index.html' | relative_url }}#home" class="logo"><img src="{{ '/logo.jpg' | relative_url }}" alt="" class="logo-mark" width="38" height="38"><span class="logo-text">RAJSHIVA<span class="logo-dot">.</span>STUDIO</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="{{ '/index.html' | relative_url }}#home" class="nav-link">Home</a>
+      <a href="{{ '/index.html' | relative_url }}#portfolio" class="nav-link">Portfolio</a>
+      <a href="{{ '/resources.html' | relative_url }}" class="nav-link">Resources</a>
+      <a href="{{ '/blog.html' | relative_url }}" class="nav-link active">Blog</a>
+      <a href="{{ '/index.html' | relative_url }}#contact" class="nav-link nav-cta">Hire Me</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="page-header">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-blob blob-gold"></div>
+    <div class="hero-blob blob-blue"></div>
+  </div>
+  <div class="container page-header-inner">
+    <a href="{{ '/index.html' | relative_url }}" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to portfolio</a>
+    <span class="section-tag">Notes from the Timeline</span>
+    <h1 class="page-title">The <span class="gradient-text">Blog</span></h1>
+    <p class="page-lead">
+      Editing tutorials, workflow breakdowns and the lessons I pick up on real client projects.
+      Written for creators who want their videos to actually get watched.
+    </p>
+  </div>
+</section>
+
+<div class="film-strip" aria-hidden="true"></div>
+
+<section class="section">
+  <div class="container">
+
+    {% if site.posts.size > 0 %}
+    <div class="blog-grid stagger-grid">
+      {% for post in site.posts %}
+      <article class="blog-card reveal">
+        <a href="{{ post.url | relative_url }}" class="blog-thumb">
+          {% if post.image %}
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+          {% else %}
+          <img src="{{ '/logo.jpg' | relative_url }}" alt="{{ post.title }}" class="thumb-logo" loading="lazy">
+          {% endif %}
+        </a>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> {{ post.date | date: "%d %b %Y" }}</span>
+            <span><i class="fa-regular fa-clock"></i> {{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min</span>
+          </div>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p>{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
+          <a href="{{ post.url | relative_url }}" class="watch-btn">Read article <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="res-note">
+      <strong>No posts yet.</strong> Add your first article by creating a file in the
+      <code>_posts</code> folder named <code>YYYY-MM-DD-your-title.md</code>.
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="{{ '/index.html' | relative_url }}#home" class="logo"><img src="{{ '/logo.jpg' | relative_url }}" alt="" class="logo-mark" width="38" height="38"><span class="logo-text">RAJSHIVA<span class="logo-dot">.</span>STUDIO</span></a>
+        <p>Freelance video editor crafting cinematic, viral and high-converting videos for creators and brands.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="{{ '/index.html' | relative_url }}#about">About</a>
+          <a href="{{ '/index.html' | relative_url }}#portfolio">Portfolio</a>
+          <a href="{{ '/resources.html' | relative_url }}">Resources</a>
+          <a href="{{ '/blog.html' | relative_url }}">Blog</a>
+          <a href="{{ '/index.html' | relative_url }}#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://www.instagram.com/rajshiva.studio/" target="_blank" rel="noopener">Instagram</a>
+          <a href="mailto:rajshivastudio@gmail.com">Email</a>
+          <a href="https://wa.me/917292802669" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Rajshiva Studio. All rights reserved.</span>
+      <span>Designed &amp; built for creators who care about craft.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+(function(){
+  'use strict';
+  var navbar = document.getElementById('navbar');
+  var fill = document.getElementById('scrollProgressFill');
+  var topBtn = document.getElementById('scrollTopBtn');
+
+  function onScroll(){
+    var y = window.scrollY || document.documentElement.scrollTop;
+    navbar.classList.toggle('scrolled', y > 40);
+    topBtn.classList.toggle('show', y > 600);
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    fill.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  topBtn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', function(){
+    var on = navLinks.classList.toggle('active');
+    navToggle.classList.toggle('active', on);
+    navToggle.setAttribute('aria-expanded', on ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(function(l){
+    l.addEventListener('click', function(){
+      navLinks.classList.remove('active');
+      navToggle.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  var revealObserver = new IntersectionObserver(function(entries, obs){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in-view'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ revealObserver.observe(el); });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

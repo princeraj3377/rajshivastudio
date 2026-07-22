@@ -1,0 +1,35 @@
+# ============================================================
+# RAJSHIVA STUDIO — Jekyll config (GitHub Pages builds this automatically)
+#
+# You rarely need to touch this file. To publish a post, add a new
+# file to the _posts folder named  YYYY-MM-DD-your-title.md
+# ============================================================
+
+title: Rajshiva Studio
+description: Video editing tutorials, workflow tips and free resources for creators.
+author: Rajshiva Studio
+email: rajshivastudio@gmail.com
+
+# Site address. baseurl is the repo name because the site lives at
+# princeraj3377.github.io/rajshivastudio — if you move to a custom
+# domain later, set baseurl to "" and url to https://yourdomain.com
+url: "https://princeraj3377.github.io"
+baseurl: "/rajshivastudio"
+
+# Blog post URLs look like /blog/my-post-title/
+permalink: /blog/:title/
+
+timezone: Asia/Kolkata
+
+# Every post uses the post layout unless it says otherwise
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Files Jekyll should leave out of the built site
+exclude:
+  - README.md
+  - .gitignore
