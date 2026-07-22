@@ -535,6 +535,7 @@ h1,h2,h3,h4{ line-height: 1.15; font-weight: 600; }
 .portfolio-thumb{ position: relative; aspect-ratio: 16/10; overflow: hidden; background: var(--bg-surface-2); }
 .portfolio-thumb img{ width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
 .portfolio-card:hover .portfolio-thumb img{ transform: scale(1.08); }
+.portfolio-thumb img.thumb-logo{ object-fit: contain; padding: 20px; background: var(--black); }
 .thumb-overlay{
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
   background: linear-gradient(180deg, rgba(6,6,7,0.05) 40%, rgba(6,6,7,0.9) 100%);
@@ -1112,9 +1113,9 @@ h1,h2,h3,h4{ line-height: 1.15; font-weight: 600; }
       <article class="portfolio-card reveal" data-category="social">
         <div class="portfolio-thumb">
           <span class="portfolio-tag">Brand Story</span>
-          <!-- EDIT: save a cover frame from the reel as brand-story-cover.jpg
-               in this folder, then change the src below to brand-story-cover.jpg -->
-          <img src="https://placehold.co/600x400/141418/d4a94f?text=Brand+Story" alt="Brand story Instagram reel — thumbnail" loading="lazy" width="600" height="400">
+          <!-- EDIT: swap in a real cover frame from the reel when you have one.
+               Save it here as brand-story-cover.jpg and drop the thumb-logo class. -->
+          <img src="logo.jpg" alt="Brand story Instagram reel — Rajshiva Studio" class="thumb-logo" loading="lazy" width="1200" height="1200">
           <div class="thumb-overlay">
             <button class="play-btn" data-video="https://www.instagram.com/reel/DbExylCyACT/" aria-label="Watch brand story reel on Instagram"><i class="fa-solid fa-play"></i></button>
           </div>
