@@ -1,3 +1,6 @@
+---
+title: Resources
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,66 +104,22 @@
     </div>
 
     <div class="prompt-grid stagger-grid">
-
-      <!-- Prompt 1 -->
+      {% for p in site.data.prompts.prompts %}
       <article class="prompt-card reveal">
-        
-        <!-- EDIT: save the generated image as prompt-thumbnail.jpg in this folder,
-             then replace both the href and src below with prompt-thumbnail.jpg -->
-        <a href="https://placehold.co/800x450/141418/d4a94f?text=Add+prompt-thumbnail.jpg" target="_blank" rel="noopener" class="prompt-preview">
-          <img src="https://placehold.co/800x450/141418/d4a94f?text=Add+prompt-thumbnail.jpg" alt="Example thumbnail generated from this prompt" loading="lazy" width="800" height="450">
+        {% if p.image and p.image != '' %}
+        <a href="{{ p.image | relative_url }}" target="_blank" rel="noopener" class="prompt-preview">
+          <img src="{{ p.image | relative_url }}" alt="{{ p.title | escape }} — example" loading="lazy" width="800" height="450">
           <span class="preview-badge"><i class="fa-solid fa-expand"></i> View full</span>
         </a>
+        {% endif %}
         <div class="prompt-head">
-          <h3>High-CTR YouTube Thumbnail</h3>
-          <span class="prompt-badge">Image</span>
+          <h3>{{ p.title }}</h3>
+          <span class="{% cycle 'badge': 'prompt-badge', 'prompt-badge blue' %}">{{ p.type }}</span>
         </div>
-        <div class="prompt-text">Ultra-detailed YouTube thumbnail, close-up of a shocked young man's face on the right third, dramatic rim lighting in orange and teal, dark cinematic background with subtle motion blur, bold empty space on the left for text, high contrast, hyper-realistic, 8k, shot on 85mm lens</div>
+        <div class="prompt-text">{{ p.text }}</div>
         <button class="copy-btn"><i class="fa-regular fa-copy"></i> <span>Copy prompt</span></button>
       </article>
-
-      <!-- Prompt 2 -->
-      <article class="prompt-card reveal">
-        
-        <!-- EDIT: save the generated image as prompt-broll.jpg in this folder,
-             then replace both the href and src below with prompt-broll.jpg -->
-        <a href="https://placehold.co/800x450/141418/3fa9f5?text=Add+prompt-broll.jpg" target="_blank" rel="noopener" class="prompt-preview">
-          <img src="https://placehold.co/800x450/141418/3fa9f5?text=Add+prompt-broll.jpg" alt="Example cinematic frame generated from this prompt" loading="lazy" width="800" height="450">
-          <span class="preview-badge"><i class="fa-solid fa-expand"></i> View full</span>
-        </a>
-        <div class="prompt-head">
-          <h3>Cinematic B-Roll Frame</h3>
-          <span class="prompt-badge blue">Image</span>
-        </div>
-        <div class="prompt-text">Cinematic still frame, golden hour light through a dusty window, shallow depth of field, anamorphic lens flare, muted teal shadows and warm highlights, film grain, Kodak Portra colour science, 2.39:1 aspect ratio, photorealistic</div>
-        <button class="copy-btn"><i class="fa-regular fa-copy"></i> <span>Copy prompt</span></button>
-      </article>
-
-      <!-- Prompt 3 -->
-      <article class="prompt-card reveal">
-        <div class="prompt-head">
-          <h3>Short-Form Video Hook</h3>
-          <span class="prompt-badge">Script</span>
-        </div>
-        <div class="prompt-text">Write 5 opening hooks for a 30-second vertical video about [TOPIC]. Each hook must be under 8 words, create an open loop or curiosity gap, and work as on-screen text in the first second. Avoid clickbait phrasing that the video does not deliver on.</div>
-        <button class="copy-btn"><i class="fa-regular fa-copy"></i> <span>Copy prompt</span></button>
-      </article>
-
-      <!-- EDIT: copy this template to add a new prompt card
-      <article class="prompt-card reveal">
-        <a href="YOUR-IMAGE.jpg" target="_blank" rel="noopener" class="prompt-preview">
-          <img src="YOUR-IMAGE.jpg" alt="Example image generated from this prompt" loading="lazy" width="800" height="450">
-          <span class="preview-badge"><i class="fa-solid fa-expand"></i> View full</span>
-        </a>
-        <div class="prompt-head">
-          <h3>YOUR PROMPT TITLE</h3>
-          <span class="prompt-badge">Image</span>
-        </div>
-        <div class="prompt-text">YOUR PROMPT TEXT HERE</div>
-        <button class="copy-btn"><i class="fa-regular fa-copy"></i> <span>Copy prompt</span></button>
-      </article>
-      -->
-
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -181,38 +140,18 @@
     </div>
 
     <div class="res-list">
-
+      {% for s in site.data.sounds.items %}
+      {% assign gold = '' %}{% assign m = forloop.index | modulo: 2 %}{% if m == 0 %}{% assign gold = ' gold' %}{% endif %}
       <div class="res-row reveal">
-        <span class="res-icon"><i class="fa-solid fa-wind"></i></span>
+        <span class="res-icon{{ gold }}"><i class="fa-solid fa-music"></i></span>
         <div class="res-meta">
-          <h3>Whoosh &amp; Transition Pack</h3>
-          <p>Swipes, risers and camera-move whooshes for cuts and scene changes.</p>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.description }}</p>
         </div>
-        <span class="res-size">EDIT: 24 files</span>
-        <!-- EDIT: paste your Google Drive link in href -->
-        <a href="#" class="dl-btn"><i class="fa-solid fa-download"></i> Download</a>
+        <span class="res-size">{{ s.size }}</span>
+        <a href="{{ s.link }}" class="dl-btn"{% if s.link contains 'http' %} target="_blank" rel="noopener"{% endif %}><i class="fa-solid fa-download"></i> Download</a>
       </div>
-
-      <div class="res-row reveal">
-        <span class="res-icon gold"><i class="fa-solid fa-bolt"></i></span>
-        <div class="res-meta">
-          <h3>Impact &amp; Hit SFX</h3>
-          <p>Bass drops, punches and stingers to land your beat-synced cuts.</p>
-        </div>
-        <span class="res-size">EDIT: 18 files</span>
-        <a href="#" class="dl-btn"><i class="fa-solid fa-download"></i> Download</a>
-      </div>
-
-      <div class="res-row reveal">
-        <span class="res-icon"><i class="fa-solid fa-music"></i></span>
-        <div class="res-meta">
-          <h3>Background Music Beds</h3>
-          <p>Loopable, copyright-safe tracks for vlogs, podcasts and brand films.</p>
-        </div>
-        <span class="res-size">EDIT: 12 tracks</span>
-        <a href="#" class="dl-btn"><i class="fa-solid fa-download"></i> Download</a>
-      </div>
-
+      {% endfor %}
     </div>
 
     <div class="res-note reveal" style="margin-top: 26px;">
@@ -237,37 +176,18 @@
     </div>
 
     <div class="res-list">
-
+      {% for s in site.data.presets.items %}
+      {% assign gold = '' %}{% assign m = forloop.index | modulo: 2 %}{% if m == 0 %}{% assign gold = ' gold' %}{% endif %}
       <div class="res-row reveal">
-        <span class="res-icon gold"><i class="fa-solid fa-palette"></i></span>
+        <span class="res-icon{{ gold }}"><i class="fa-solid fa-sliders"></i></span>
         <div class="res-meta">
-          <h3>Teal &amp; Orange LUT Pack</h3>
-          <p>Six cinematic .cube LUTs — works in Premiere, Resolve and Final Cut.</p>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.description }}</p>
         </div>
-        <span class="res-size">EDIT: .cube</span>
-        <a href="#" class="dl-btn"><i class="fa-solid fa-download"></i> Download</a>
+        <span class="res-size">{{ s.size }}</span>
+        <a href="{{ s.link }}" class="dl-btn"{% if s.link contains 'http' %} target="_blank" rel="noopener"{% endif %}><i class="fa-solid fa-download"></i> Download</a>
       </div>
-
-      <div class="res-row reveal">
-        <span class="res-icon"><i class="fa-solid fa-font"></i></span>
-        <div class="res-meta">
-          <h3>Kinetic Title Templates</h3>
-          <p>Animated titles and lower-thirds — After Effects project file.</p>
-        </div>
-        <span class="res-size">EDIT: .aep</span>
-        <a href="#" class="dl-btn"><i class="fa-solid fa-download"></i> Download</a>
-      </div>
-
-      <div class="res-row reveal">
-        <span class="res-icon gold"><i class="fa-solid fa-sliders"></i></span>
-        <div class="res-meta">
-          <h3>Shorts &amp; Reels Preset Pack</h3>
-          <p>Vertical export presets, caption styles and safe-zone guides.</p>
-        </div>
-        <span class="res-size">EDIT: .prfpset</span>
-        <a href="#" class="dl-btn"><i class="fa-solid fa-download"></i> Download</a>
-      </div>
-
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -286,43 +206,13 @@
     </div>
 
     <div class="tool-grid stagger-grid">
-
-      <a href="https://pixabay.com/" target="_blank" rel="noopener" class="tool-card reveal">
-        <i class="fa-solid fa-photo-film tool-ico"></i>
-        <h3>Pixabay <i class="fa-solid fa-arrow-up-right-from-square"></i></h3>
-        <p>Free stock video, images and music. No attribution required.</p>
+      {% for t in site.data.tools.tools %}
+      <a href="{{ t.url }}" target="_blank" rel="noopener" class="tool-card reveal">
+        <i class="fa-solid fa-link tool-ico"></i>
+        <h3>{{ t.name }} <i class="fa-solid fa-arrow-up-right-from-square"></i></h3>
+        <p>{{ t.description }}</p>
       </a>
-
-      <a href="https://freesound.org/" target="_blank" rel="noopener" class="tool-card reveal">
-        <i class="fa-solid fa-volume-high tool-ico"></i>
-        <h3>Freesound <i class="fa-solid fa-arrow-up-right-from-square"></i></h3>
-        <p>Huge community library of sound effects, most under CC licences.</p>
-      </a>
-
-      <a href="https://www.pexels.com/videos/" target="_blank" rel="noopener" class="tool-card reveal">
-        <i class="fa-solid fa-video tool-ico"></i>
-        <h3>Pexels Video <i class="fa-solid fa-arrow-up-right-from-square"></i></h3>
-        <p>High-quality free B-roll for filling gaps in a timeline.</p>
-      </a>
-
-      <a href="https://fonts.google.com/" target="_blank" rel="noopener" class="tool-card reveal">
-        <i class="fa-solid fa-t tool-ico"></i>
-        <h3>Google Fonts <i class="fa-solid fa-arrow-up-right-from-square"></i></h3>
-        <p>Free fonts for titles, captions and thumbnails.</p>
-      </a>
-
-      <a href="https://www.remove.bg/" target="_blank" rel="noopener" class="tool-card reveal">
-        <i class="fa-solid fa-scissors tool-ico"></i>
-        <h3>remove.bg <i class="fa-solid fa-arrow-up-right-from-square"></i></h3>
-        <p>One-click background removal for thumbnail cut-outs.</p>
-      </a>
-
-      <a href="https://coolors.co/" target="_blank" rel="noopener" class="tool-card reveal">
-        <i class="fa-solid fa-swatchbook tool-ico"></i>
-        <h3>Coolors <i class="fa-solid fa-arrow-up-right-from-square"></i></h3>
-        <p>Build colour palettes for grades, titles and brand kits.</p>
-      </a>
-
+      {% endfor %}
     </div>
   </div>
 </section>

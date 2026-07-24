@@ -93,3 +93,98 @@ content:
         type: rich-text
         options:
           required: true
+
+  # ---------- RESOURCES SECTION (separate group) ----------
+  - name: res_prompts
+    label: "Resources · AI Prompts"
+    type: file
+    path: _data/prompts.yml
+    fields:
+      - name: prompts
+        label: Prompts
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            options: { required: true }
+          - name: type
+            label: Badge (Image / Script / Video)
+            type: string
+          - name: text
+            label: Prompt text (Copy button copies this)
+            type: text
+            options: { required: true }
+          - name: image
+            label: Preview image (optional)
+            type: image
+
+  - name: res_sounds
+    label: "Resources · Sound & Music"
+    type: file
+    path: _data/sounds.yml
+    fields:
+      - name: items
+        label: Sound / Music Packs
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            options: { required: true }
+          - name: description
+            label: Description
+            type: text
+          - name: size
+            label: Size / count (e.g. 24 files)
+            type: string
+          - name: link
+            label: Download link (Google Drive)
+            type: string
+
+  - name: res_presets
+    label: "Resources · LUTs & Presets"
+    type: file
+    path: _data/presets.yml
+    fields:
+      - name: items
+        label: LUTs / Presets / Templates
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            options: { required: true }
+          - name: description
+            label: Description
+            type: text
+          - name: size
+            label: File type (e.g. .cube, .aep)
+            type: string
+          - name: link
+            label: Download link (Google Drive)
+            type: string
+
+  - name: res_tools
+    label: "Resources · Tools"
+    type: file
+    path: _data/tools.yml
+    fields:
+      - name: tools
+        label: Tools & Links
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Tool name
+            type: string
+            options: { required: true }
+          - name: url
+            label: Website URL
+            type: string
+          - name: description
+            label: Description
+            type: text

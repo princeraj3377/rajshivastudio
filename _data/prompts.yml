@@ -1,0 +1,18 @@
+# AI PROMPTS — managed from the panel: "Resources · AI Prompts"
+#   title   prompt ka naam
+#   type    badge label (Image / Script / Video)
+#   text    poora prompt (Copy button isko copy karta hai)
+#   image   optional preview image (upload) — khali chhod sakte ho
+prompts:
+  - title: "High-CTR YouTube Thumbnail"
+    type: "Image"
+    text: "Ultra-detailed YouTube thumbnail, close-up of a shocked young man's face on the right third, dramatic rim lighting in orange and teal, dark cinematic background with subtle motion blur, bold empty space on the left for text, high contrast, hyper-realistic, 8k, shot on 85mm lens"
+    image: ""
+  - title: "Cinematic B-Roll Frame"
+    type: "Image"
+    text: "Cinematic still frame, golden hour light through a dusty window, shallow depth of field, anamorphic lens flare, muted teal shadows and warm highlights, film grain, Kodak Portra colour science, 2.39:1 aspect ratio, photorealistic"
+    image: ""
+  - title: "Short-Form Video Hook"
+    type: "Script"
+    text: "Write 5 opening hooks for a 30-second vertical video about [TOPIC]. Each hook must be under 8 words, create an open loop or curiosity gap, and work as on-screen text in the first second. Avoid clickbait phrasing that the video does not deliver on."
+    image: ""

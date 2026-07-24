@@ -1,0 +1,15 @@
+# LUTs, PRESETS & TEMPLATES — panel: "Resources · LUTs & Presets"
+#   title / description / size (e.g. ".cube") / link (Google Drive share link)
+items:
+  - title: "Teal & Orange LUT Pack"
+    description: "Six cinematic .cube LUTs — works in Premiere, Resolve and Final Cut."
+    size: ".cube"
+    link: "#"
+  - title: "Kinetic Title Templates"
+    description: "Animated titles and lower-thirds — After Effects project file."
+    size: ".aep"
+    link: "#"
+  - title: "Shorts & Reels Preset Pack"
+    description: "Vertical export presets, caption styles and safe-zone guides."
+    size: ".prfpset"
+    link: "#"
