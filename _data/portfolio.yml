@@ -1,56 +1,48 @@
-# ============================================================
-# PORTFOLIO VIDEOS
-# Managed from the admin panel (Pages CMS) → "Portfolio Videos".
-# You can also edit here by hand. Each item = one card.
-#
-#   title        card heading
-#   category     one of: youtube shorts social podcast gaming cinematic commercial
-#   tag          small label shown on the thumbnail
-#   link         full video URL (YouTube, Shorts, or Instagram)
-#   youtube_id   the code after v= or /shorts/ (fills the thumbnail automatically)
-#   image        cover image — use ONLY for Instagram / non-YouTube (optional)
-#   description  one line under the title
-# ============================================================
-
 videos:
-  - title: "Sonam Wangchuk vs the Government"
+  - title: Sonam Wangchuk vs the Government
     category: youtube
-    tag: "Documentary Editing"
-    link: "https://youtu.be/Hlq2unt9JH0"
-    youtube_id: "Hlq2unt9JH0"
-    description: "Documentary-style edit weaving archival clips, news footage and motion titles into a clear, information-heavy story that keeps moving."
-
-  - title: "17 Crore Ki Shaadi Thi… Par Dulha Wapas Nahi Aaya"
+    tag: Documentary Editing
+    link: https://youtu.be/Hlq2unt9JH0
+    youtube_id: Hlq2unt9JH0
+    description: Documentary-style edit weaving archival clips, news footage and
+      motion titles into a clear, information-heavy story that keeps moving.
+  - title: 17 Crore Ki Shaadi Thi… Par Dulha Wapas Nahi Aaya
     category: youtube
-    tag: "Story / True Crime"
-    link: "https://youtu.be/q8fBy6NPPN8"
-    youtube_id: "q8fBy6NPPN8"
-    description: "Suspense-driven true crime edit — layered sound design, tight reveals and cliffhanger pacing that hold viewers to the final twist."
-
-  - title: "Phone Scroll Habit Ka Secret Formula"
+    tag: Story / True Crime
+    link: https://youtu.be/q8fBy6NPPN8
+    youtube_id: q8fBy6NPPN8
+    description: Suspense-driven true crime edit — layered sound design, tight
+      reveals and cliffhanger pacing that hold viewers to the final twist.
+  - title: Phone Scroll Habit Ka Secret Formula
     category: shorts
-    tag: "Shorts & Reels"
-    link: "https://youtube.com/shorts/MCkjmOWWr0I"
-    youtube_id: "MCkjmOWWr0I"
-    description: "Vertical Short from the Atomic Habits series — built on a one-second hook, punchy captions and rapid-fire cuts that hold to the last frame."
-
-  - title: "Gym Promotion — Brand Content"
+    tag: Shorts & Reels
+    link: https://youtube.com/shorts/MCkjmOWWr0I
+    youtube_id: MCkjmOWWr0I
+    description: Vertical Short from the Atomic Habits series — built on a
+      one-second hook, punchy captions and rapid-fire cuts that hold to the last
+      frame.
+  - title: Gym Promotion — Brand Content
     category: commercial
-    tag: "Brand Promo"
-    link: "https://www.youtube.com/shorts/VROHMGoEk48"
-    youtube_id: "VROHMGoEk48"
-    description: "Short-form brand promo for a fitness studio — high-energy cuts, beat-matched transitions and bold on-screen text built to sell the space fast."
-
-  - title: "Aayi Badi Chor — Gym Comedy Reel"
+    tag: Brand Promo
+    link: https://www.youtube.com/shorts/VROHMGoEk48
+    youtube_id: VROHMGoEk48
+    description: Short-form brand promo for a fitness studio — high-energy cuts,
+      beat-matched transitions and bold on-screen text built to sell the space
+      fast.
+  - title: Aayi Badi Chor — Gym Comedy Reel
     category: social
-    tag: "Instagram Reel"
-    link: "https://www.instagram.com/reel/DaHyADxJWwj/"
-    image: ""
-    description: "Fast, comedic Instagram reel cut to trending audio with snappy timing and beat-matched captions built for the feed."
-
-  - title: "Brand Story — Instagram Reel"
+    tag: Instagram Reel
+    link: https://www.instagram.com/reel/DaHyADxJWwj/
+    description: Fast, comedic Instagram reel cut to trending audio with snappy
+      timing and beat-matched captions built for the feed.
+  - title: Brand Story — Instagram Reel
     category: social
-    tag: "Brand Story"
-    link: "https://www.instagram.com/reel/DbExylCyACT/"
-    image: ""
-    description: "Story-led brand reel cut for the feed — tight pacing, clean captions and a build that lands the message inside 30 seconds."
+    tag: Brand Story
+    link: https://www.instagram.com/reel/DbExylCyACT/
+    description: Story-led brand reel cut for the feed — tight pacing, clean
+      captions and a build that lands the message inside 30 seconds.
+  - title: WHY NEET PROTEST IS NOT REAL PROTEST
+    category: social
+    link: https://www.facebook.com/share/r/1CtZxjQWXo/
+    image: /blog-images/ChatGPT Image Jul 21, 2026, 04_48_44 AM.png
+    description: THIS IS NOT A REAL PROTEST THIS IS MAKE A STUDENT MENTAL
