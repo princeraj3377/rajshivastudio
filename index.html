@@ -1,3 +1,6 @@
+---
+# Homepage — front matter enables the portfolio data loop below
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -271,213 +274,35 @@
 
     <div class="portfolio-filter reveal" id="portfolioFilter" role="tablist" aria-label="Filter portfolio by category">
       <button class="filter-btn active" data-filter="all">All Work</button>
-      <button class="filter-btn" data-filter="youtube">YouTube</button>
-      <button class="filter-btn" data-filter="shorts">Shorts &amp; Reels</button>
-      <button class="filter-btn" data-filter="social">Social Media</button>
-      <button class="filter-btn" data-filter="podcast">Podcasts</button>
-      <button class="filter-btn" data-filter="gaming">Gaming</button>
-      <button class="filter-btn" data-filter="cinematic">Cinematic</button>
-      <button class="filter-btn" data-filter="commercial">Commercial</button>
+      {% assign cats = site.data.portfolio.videos | map: 'category' | uniq %}
+      {% for cat in cats %}
+      <button class="filter-btn" data-filter="{{ cat }}">{% case cat %}{% when 'youtube' %}YouTube{% when 'shorts' %}Shorts &amp; Reels{% when 'social' %}Social Media{% when 'podcast' %}Podcasts{% when 'gaming' %}Gaming{% when 'cinematic' %}Cinematic{% when 'commercial' %}Commercial{% else %}{{ cat | capitalize }}{% endcase %}</button>
+      {% endfor %}
     </div>
 
     <div class="portfolio-grid stagger-grid" id="portfolioGrid">
-
-      <!-- Video 1 -->
-      <article class="portfolio-card reveal" data-category="youtube">
+      {% for v in site.data.portfolio.videos %}
+      <article class="portfolio-card reveal" data-category="{{ v.category }}">
         <div class="portfolio-thumb">
-          <span class="portfolio-tag">Documentary Editing</span>
-          <img src="https://img.youtube.com/vi/Hlq2unt9JH0/maxresdefault.jpg" alt="Sonam Wangchuk vs the Government — thumbnail" loading="lazy" width="1280" height="720">
+          <span class="portfolio-tag">{{ v.tag }}</span>
+          {% if v.youtube_id and v.youtube_id != '' %}
+          <img src="https://img.youtube.com/vi/{{ v.youtube_id }}/maxresdefault.jpg" alt="{{ v.title | escape }} — thumbnail" loading="lazy" width="1280" height="720">
+          {% elsif v.image and v.image != '' %}
+          <img src="{{ v.image | relative_url }}" alt="{{ v.title | escape }} — thumbnail" loading="lazy" width="600" height="400">
+          {% else %}
+          <img src="{{ '/logo.jpg' | relative_url }}" alt="{{ v.title | escape }} — Rajshiva Studio" class="thumb-logo" loading="lazy" width="1200" height="1200">
+          {% endif %}
           <div class="thumb-overlay">
-            <button class="play-btn" data-video="https://youtu.be/Hlq2unt9JH0" aria-label="Watch Sonam Wangchuk vs the Government"><i class="fa-solid fa-play"></i></button>
+            <button class="play-btn" data-video="{{ v.link }}" aria-label="Watch {{ v.title | escape }}"><i class="fa-solid fa-play"></i></button>
           </div>
         </div>
         <div class="portfolio-body">
-          <h3>Sonam Wangchuk vs the Government</h3>
-          <p>Documentary-style edit weaving archival clips, news footage and motion titles into a clear, information-heavy story that keeps moving.</p>
-          <a href="https://youtu.be/Hlq2unt9JH0" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <h3>{{ v.title }}</h3>
+          <p>{{ v.description }}</p>
+          <a href="{{ v.link }}" target="_blank" rel="noopener" class="watch-btn">{% if v.link contains 'instagram' %}Watch on Instagram{% elsif v.link contains 'shorts' %}Watch Short{% else %}Watch Video{% endif %} <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </article>
-
-      <!-- Video 2 -->
-      <article class="portfolio-card reveal" data-category="shorts">
-        <div class="portfolio-thumb">
-          <span class="portfolio-tag">Shorts &amp; Reels</span>
-          <img src="https://img.youtube.com/vi/MCkjmOWWr0I/maxresdefault.jpg" alt="Phone Scroll Habit Ka Secret Formula — Atomic Habits Day 5 thumbnail" loading="lazy" width="1280" height="720">
-          <div class="thumb-overlay">
-            <button class="play-btn" data-video="https://youtube.com/shorts/MCkjmOWWr0I" aria-label="Watch Phone Scroll Habit Ka Secret Formula"><i class="fa-solid fa-play"></i></button>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>Phone Scroll Habit Ka Secret Formula</h3>
-          <p>Vertical Short from the Atomic Habits series — built on a one-second hook, punchy captions and rapid-fire cuts that hold to the last frame.</p>
-          <a href="https://youtube.com/shorts/MCkjmOWWr0I" target="_blank" rel="noopener" class="watch-btn">Watch Short <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </article>
-
-      <!-- Video 3 -->
-      <article class="portfolio-card reveal" data-category="social">
-        <div class="portfolio-thumb">
-          <span class="portfolio-tag">Instagram Reel</span>
-          <!-- EDIT: Instagram blocks thumbnail hotlinking. Save a cover frame from the
-               reel as e.g. reel-cover.jpg next to this file and swap the src below. -->
-          <img src="https://placehold.co/600x400/141418/d4a94f?text=Instagram+Reel" alt="Aayi Badi Chor — Instagram gym comedy reel thumbnail" loading="lazy" width="600" height="400">
-          <div class="thumb-overlay">
-            <button class="play-btn" data-video="https://www.instagram.com/reel/DaHyADxJWwj/" aria-label="Watch Aayi Badi Chor Instagram reel"><i class="fa-solid fa-play"></i></button>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>Aayi Badi Chor — Gym Comedy Reel</h3>
-          <p>Fast, comedic Instagram reel cut to trending audio with snappy timing and beat-matched captions built for the feed.</p>
-          <a href="https://www.instagram.com/reel/DaHyADxJWwj/" target="_blank" rel="noopener" class="watch-btn">Watch on Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </article>
-
-      <!-- Video 4 -->
-      <article class="portfolio-card reveal" data-category="podcast">
-        <div class="portfolio-thumb">
-          <span class="portfolio-tag">Podcast Editing</span>
-          <img src="https://placehold.co/600x400/141418/3fa9f5?text=Podcast+Episode" alt="The Grind Podcast Episode 24 — thumbnail" loading="lazy" width="600" height="400">
-          <div class="thumb-overlay">
-            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_4" aria-label="Watch The Grind Podcast Episode 24"><i class="fa-solid fa-play"></i></button>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>The Grind Podcast — Episode 24</h3>
-          <p>Multi-cam podcast edit with clean audio leveling, chapter markers and social-ready highlight clips.</p>
-          <a href="https://youtube.com/watch?v=EDIT_LINK_4" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </article>
-
-      <!-- Video 5 -->
-      <article class="portfolio-card reveal" data-category="gaming">
-        <div class="portfolio-thumb">
-          <span class="portfolio-tag">Gaming Videos</span>
-          <img src="https://placehold.co/600x400/141418/d4a94f?text=Gaming+Montage" alt="Epic Gaming Montage Valorant Highlights — thumbnail" loading="lazy" width="600" height="400">
-          <div class="thumb-overlay">
-            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_5" aria-label="Watch Epic Gaming Montage"><i class="fa-solid fa-play"></i></button>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>Epic Gaming Montage: Highlights Reel</h3>
-          <p>High-octane killcam montage with synced impact sound design, glitch transitions and dynamic overlays.</p>
-          <a href="https://youtube.com/watch?v=EDIT_LINK_5" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </article>
-
-      <!-- Video 6 -->
-      <article class="portfolio-card reveal" data-category="cinematic">
-        <div class="portfolio-thumb">
-          <span class="portfolio-tag">Cinematic Editing</span>
-          <img src="https://placehold.co/600x400/141418/3fa9f5?text=Wedding+Film" alt="A Cinematic Love Story wedding film — thumbnail" loading="lazy" width="600" height="400">
-          <div class="thumb-overlay">
-            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_6" aria-label="Watch A Cinematic Love Story"><i class="fa-solid fa-play"></i></button>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>Wedding Film — A Cinematic Love Story</h3>
-          <p>Emotion-first storytelling with film-grade color, slow pacing and a custom score to match the moment.</p>
-          <a href="https://youtube.com/watch?v=EDIT_LINK_6" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </article>
-
-      <!-- Video 7 -->
-      <article class="portfolio-card reveal" data-category="commercial">
-        <div class="portfolio-thumb">
-          <span class="portfolio-tag">Motion Graphics</span>
-          <img src="https://placehold.co/600x400/141418/d4a94f?text=Motion+Graphics" alt="Product Launch Motion Graphics Reel — thumbnail" loading="lazy" width="600" height="400">
-          <div class="thumb-overlay">
-            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_7" aria-label="Watch Product Launch Motion Graphics Reel"><i class="fa-solid fa-play"></i></button>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>Product Launch Motion Graphics Reel</h3>
-          <p>Custom kinetic typography and animated product reveals built to introduce a brand's new launch.</p>
-          <a href="https://youtube.com/watch?v=EDIT_LINK_7" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </article>
-
-      <!-- Video 8 -->
-      <article class="portfolio-card reveal" data-category="cinematic">
-        <div class="portfolio-thumb">
-          <span class="portfolio-tag">Color Grading</span>
-          <img src="https://placehold.co/600x400/141418/3fa9f5?text=Color+Grading" alt="Color Grading Breakdown Teal and Orange Look — thumbnail" loading="lazy" width="600" height="400">
-          <div class="thumb-overlay">
-            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_8" aria-label="Watch Color Grading Breakdown"><i class="fa-solid fa-play"></i></button>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>Color Grading Breakdown: Teal &amp; Orange</h3>
-          <p>A before-and-after grading breakdown showing how mood and contrast were built in DaVinci Resolve.</p>
-          <a href="https://youtube.com/watch?v=EDIT_LINK_8" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </article>
-
-      <!-- Video 9 -->
-      <article class="portfolio-card reveal" data-category="commercial">
-        <div class="portfolio-thumb">
-          <span class="portfolio-tag">Brand Promo</span>
-          <img src="https://img.youtube.com/vi/VROHMGoEk48/maxresdefault.jpg" alt="Gym promotion brand content — thumbnail" loading="lazy" width="1280" height="720">
-          <div class="thumb-overlay">
-            <button class="play-btn" data-video="https://www.youtube.com/shorts/VROHMGoEk48" aria-label="Watch gym promotion brand video"><i class="fa-solid fa-play"></i></button>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>Gym Promotion — Brand Content</h3>
-          <p>Short-form brand promo for a fitness studio — high-energy cuts, beat-matched transitions and bold on-screen text built to sell the space fast.</p>
-          <a href="https://www.youtube.com/shorts/VROHMGoEk48" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </article>
-
-      <!-- Video 10 -->
-      <article class="portfolio-card reveal" data-category="youtube">
-        <div class="portfolio-thumb">
-          <span class="portfolio-tag">Story / True Crime</span>
-          <img src="https://img.youtube.com/vi/q8fBy6NPPN8/maxresdefault.jpg" alt="17 Crore Ki Shaadi Thi — Real Crime Story thumbnail" loading="lazy" width="1280" height="720">
-          <div class="thumb-overlay">
-            <button class="play-btn" data-video="https://youtu.be/q8fBy6NPPN8" aria-label="Watch 17 Crore Ki Shaadi Thi — Real Crime Story"><i class="fa-solid fa-play"></i></button>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>17 Crore Ki Shaadi Thi… Par Dulha Wapas Nahi Aaya</h3>
-          <p>Suspense-driven true crime edit — layered sound design, tight reveals and cliffhanger pacing that hold viewers to the final twist.</p>
-          <a href="https://youtu.be/q8fBy6NPPN8" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </article>
-
-      <!-- Video 11 -->
-      <article class="portfolio-card reveal" data-category="social">
-        <div class="portfolio-thumb">
-          <span class="portfolio-tag">Brand Story</span>
-          <!-- EDIT: swap in a real cover frame from the reel when you have one.
-               Save it here as brand-story-cover.jpg and drop the thumb-logo class. -->
-          <img src="logo.jpg" alt="Brand story Instagram reel — Rajshiva Studio" class="thumb-logo" loading="lazy" width="1200" height="1200">
-          <div class="thumb-overlay">
-            <button class="play-btn" data-video="https://www.instagram.com/reel/DbExylCyACT/" aria-label="Watch brand story reel on Instagram"><i class="fa-solid fa-play"></i></button>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>Brand Story — Instagram Reel</h3>
-          <p>Story-led brand reel cut for the feed — tight pacing, clean captions and a build that lands the message inside 30 seconds.</p>
-          <a href="https://www.instagram.com/reel/DbExylCyACT/" target="_blank" rel="noopener" class="watch-btn">Watch on Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </article>
-
-      <!-- Video 12 -->
-      <article class="portfolio-card reveal" data-category="cinematic">
-        <div class="portfolio-thumb">
-          <span class="portfolio-tag">Music Video</span>
-          <img src="https://placehold.co/600x400/141418/3fa9f5?text=Music+Video" alt="Music Video Edit Indie Artist Visualizer — thumbnail" loading="lazy" width="600" height="400">
-          <div class="thumb-overlay">
-            <button class="play-btn" data-video="https://youtube.com/watch?v=EDIT_LINK_12" aria-label="Watch Music Video Edit"><i class="fa-solid fa-play"></i></button>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>Music Video Edit — Indie Artist Visualizer</h3>
-          <p>Beat-synced cuts, kinetic lyric overlays and stylized grading built to match an indie single's mood.</p>
-          <a href="https://youtube.com/watch?v=EDIT_LINK_12" target="_blank" rel="noopener" class="watch-btn">Watch Video <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </article>
-
+      {% endfor %}
     </div>
   </div>
 </section>

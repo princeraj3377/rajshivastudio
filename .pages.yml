@@ -14,6 +14,45 @@ media:
     extensions: [jpg, jpeg, png, gif, webp, svg]
 
 content:
+  - name: portfolio
+    label: Portfolio Videos
+    type: file
+    path: _data/portfolio.yml
+    fields:
+      - name: videos
+        label: Videos
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            options:
+              required: true
+          - name: category
+            label: Category
+            type: select
+            options:
+              values: [youtube, shorts, social, podcast, gaming, cinematic, commercial]
+          - name: tag
+            label: Tag (small label on thumbnail)
+            type: string
+          - name: link
+            label: Video URL (YouTube / Shorts / Instagram)
+            type: string
+            options:
+              required: true
+          - name: youtube_id
+            label: YouTube ID (for thumbnail)
+            type: string
+            description: Code after v= or /shorts/. Leave empty for Instagram.
+          - name: image
+            label: Cover image (Instagram only)
+            type: image
+          - name: description
+            label: Description
+            type: text
+
   - name: posts
     label: Blog Posts
     type: collection
