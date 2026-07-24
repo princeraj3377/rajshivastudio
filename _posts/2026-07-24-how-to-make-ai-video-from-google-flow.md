@@ -1,6 +1,7 @@
 ---
-title: HOW TO MAKE AI VEDIO FROM GOOGLE FLOW
+title: "HOW TO MAKE AI VEDIO FROM GOOGLE FLOW"
 description: "THIS WIL HELP TO MAKE AI VEDIO FROM GOOFLE FLOW "
 date: 2026-07-24
+tags: [ai, tutorial]
 ---
 HWBFHDS
