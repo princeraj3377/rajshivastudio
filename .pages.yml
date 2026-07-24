@@ -1,0 +1,56 @@
+# ============================================================
+# RAJSHIVA STUDIO — Pages CMS config
+#
+# This powers the admin panel at https://app.pagescms.org
+# It is a dotfile, so Jekyll ignores it and it can never break
+# the site build. Log in there with GitHub to manage your blog.
+# ============================================================
+
+media:
+  - name: images
+    label: Blog Images
+    input: blog-images
+    output: /blog-images
+    extensions: [jpg, jpeg, png, gif, webp, svg]
+
+content:
+  - name: posts
+    label: Blog Posts
+    type: collection
+    path: _posts
+    filename: '{year}-{month}-{day}-{fields.title|slugify}.md'
+    view:
+      fields: [title, date]
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        options:
+          required: true
+      - name: description
+        label: Short description
+        type: text
+        description: One or two lines — shown on the blog card and in Google results.
+      - name: date
+        label: Publish date
+        type: date
+        options:
+          required: true
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+        description: e.g. capcut, tutorial, shorts
+      - name: image
+        label: Cover image
+        type: image
+        description: Optional — falls back to your logo if empty.
+      - name: body
+        label: Article body
+        type: rich-text
+        options:
+          required: true
