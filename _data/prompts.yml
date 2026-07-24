@@ -1,18 +1,51 @@
-# AI PROMPTS — managed from the panel: "Resources · AI Prompts"
-#   title   prompt ka naam
-#   type    badge label (Image / Script / Video)
-#   text    poora prompt (Copy button isko copy karta hai)
-#   image   optional preview image (upload) — khali chhod sakte ho
 prompts:
-  - title: "High-CTR YouTube Thumbnail"
-    type: "Image"
-    text: "Ultra-detailed YouTube thumbnail, close-up of a shocked young man's face on the right third, dramatic rim lighting in orange and teal, dark cinematic background with subtle motion blur, bold empty space on the left for text, high contrast, hyper-realistic, 8k, shot on 85mm lens"
-    image: ""
-  - title: "Cinematic B-Roll Frame"
-    type: "Image"
-    text: "Cinematic still frame, golden hour light through a dusty window, shallow depth of field, anamorphic lens flare, muted teal shadows and warm highlights, film grain, Kodak Portra colour science, 2.39:1 aspect ratio, photorealistic"
-    image: ""
-  - title: "Short-Form Video Hook"
-    type: "Script"
-    text: "Write 5 opening hooks for a 30-second vertical video about [TOPIC]. Each hook must be under 8 words, create an open loop or curiosity gap, and work as on-screen text in the first second. Avoid clickbait phrasing that the video does not deliver on."
-    image: ""
+  - title: High-CTR YouTube Thumbnail
+    type: Image
+    text: Ultra-detailed YouTube thumbnail, close-up of a shocked young man's face
+      on the right third, dramatic rim lighting in orange and teal, dark
+      cinematic background with subtle motion blur, bold empty space on the left
+      for text, high contrast, hyper-realistic, 8k, shot on 85mm lens
+  - title: Cinematic B-Roll Frame
+    type: Image
+    text: Cinematic still frame, golden hour light through a dusty window, shallow
+      depth of field, anamorphic lens flare, muted teal shadows and warm
+      highlights, film grain, Kodak Portra colour science, 2.39:1 aspect ratio,
+      photorealistic
+  - title: Short-Form Video Hook
+    type: Script
+    text: Write 5 opening hooks for a 30-second vertical video about [TOPIC]. Each
+      hook must be under 8 words, create an open loop or curiosity gap, and work
+      as on-screen text in the first second. Avoid clickbait phrasing that the
+      video does not deliver on.
+  - title: background remover prompt
+    type: "image "
+    text: >-
+      Remove the entire background from this image while keeping the main
+      subject exactly unchanged.
+
+
+      Requirements:
+
+      - Preserve the subject's face, body, skin tone, hairstyle, clothing,
+      accessories, and proportions exactly as they are.
+
+      - Do not crop, stretch, redraw, or alter any part of the subject.
+
+      - Keep all fine details including hair strands, transparent objects,
+      jewelry, and edges clean and natural.
+
+      - Remove all background elements, shadows, reflections, text, and unwanted
+      objects.
+
+      - Output with a perfectly transparent background (PNG with alpha channel).
+
+      - Maintain the original resolution and maximum image quality.
+
+      - Keep lighting, colors, sharpness, and textures identical to the original
+      image.
+
+      - No artificial enhancements, filters, or stylistic changes.
+
+      - Produce professional, clean cutout quality suitable for graphic design
+      and commercial use.
+    image: /blog-images/ChatGPT Image Jul 24, 2026, 02_46_58 AM.png
