@@ -1,4 +1,9 @@
-# How to Open YouTube
+---
+title: "How to Open YouTube"
+description: "A quick beginner guide to opening YouTube on a browser or the mobile app."
+date: 2026-07-22
+tags: [beginner, youtube]
+---
 
 ## Method 1: Using a Web Browser
 1. Open any web browser (Google Chrome, Microsoft Edge, Firefox, Safari, etc.).
