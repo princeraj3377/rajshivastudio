@@ -90,7 +90,7 @@
       <a href="#portfolio" class="nav-link">Portfolio</a>
       <a href="#skills" class="nav-link">Skills</a>
       <a href="#why-me" class="nav-link">Why Me</a>
-      {% if site.data.testimonials.testimonials.size > 0 %}<a href="#testimonials" class="nav-link">Reviews</a>{% endif %}
+      <a href="#testimonials" class="nav-link">Reviews</a>
       <a href="resources.html" class="nav-link">Resources</a>
       <a href="blog/" class="nav-link">Blog</a>
       <a href="#contact" class="nav-link nav-cta">Hire Me</a>
@@ -384,15 +384,15 @@
 <!-- ============================================================
      7. CLIENT TESTIMONIALS
      ============================================================ -->
-{% if site.data.testimonials.testimonials.size > 0 %}
 <section class="section testimonials" id="testimonials">
   <div class="container">
     <div class="section-head center reveal">
       <span class="section-tag">Client Feedback</span>
       <h2 class="section-title">What Clients <span class="gradient-text">Say</span></h2>
-      <p class="section-desc">A few words from creators and brands I've worked with.</p>
+      <p class="section-desc">Real words from creators and brands I've worked with — and you can add yours.</p>
     </div>
 
+    {% if site.data.testimonials.testimonials.size > 0 %}
     <div class="testimonials-grid stagger-grid">
       {% for t in site.data.testimonials.testimonials %}
       <div class="testimonial-card reveal">
@@ -407,9 +407,15 @@
       </div>
       {% endfor %}
     </div>
+    {% else %}
+    <p class="testimonials-empty reveal">No reviews yet — be the first to share your experience.</p>
+    {% endif %}
+
+    <div class="testimonials-cta reveal">
+      <a href="review.html" class="btn btn-primary"><i class="fa-solid fa-star"></i> Leave a Review</a>
+    </div>
   </div>
 </section>
-{% endif %}
 
 <!-- ============================================================
      8. STATISTICS COUNTER
