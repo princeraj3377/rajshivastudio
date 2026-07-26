@@ -94,6 +94,32 @@ content:
         options:
           required: true
 
+  - name: testimonials
+    label: "Client Reviews"
+    type: file
+    path: _data/testimonials.yml
+    fields:
+      - name: testimonials
+        label: Reviews (add one here to publish it)
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Client name
+            type: string
+            options: { required: true }
+          - name: role
+            label: Role / company (e.g. YouTuber, 500K subs)
+            type: string
+          - name: rating
+            label: Rating (1 to 5)
+            type: number
+            options: { min: 1, max: 5, step: 1 }
+          - name: text
+            label: Review text
+            type: text
+            options: { required: true }
+
   # ---------- RESOURCES SECTION (separate group) ----------
   - name: res_prompts
     label: "Resources · AI Prompts"

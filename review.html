@@ -1,0 +1,170 @@
+---
+title: Leave a Review
+permalink: /review.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Leave a Review | Rajshiva Studio</title>
+<meta name="description" content="Share your experience working with Rajshiva Studio.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0a0d">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar scrolled" id="navbar" style="position:absolute;">
+  <div class="nav-container">
+    <a href="index.html#home" class="logo"><img src="logo.jpg" alt="" class="logo-mark" width="38" height="38"><span class="logo-text">RAJSHIVA<span class="logo-dot">.</span>STUDIO</span></a>
+    <a href="index.html" class="nav-link">← Back to site</a>
+  </div>
+</header>
+
+<main>
+<section class="review-page">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-blob blob-gold"></div>
+    <div class="hero-blob blob-blue"></div>
+  </div>
+
+  <div class="container review-wrap">
+    <div class="review-intro reveal in-view">
+      <span class="section-tag">Client Review</span>
+      <h1 class="page-title">Share Your <span class="gradient-text">Experience</span></h1>
+      <p class="page-lead">Worked with Rajshiva Studio? A few honest words help other creators — and mean a lot to me. Takes under a minute.</p>
+    </div>
+
+    <form class="review-form glass" id="reviewForm" novalidate>
+      <!-- Honeypot: hidden from people, bots fill it and get rejected -->
+      <input type="checkbox" name="botcheck" id="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="form-group">
+        <label for="rv-name">Your Name <span class="req">*</span></label>
+        <input type="text" id="rv-name" name="name" placeholder="e.g. Rahul Sharma" required>
+      </div>
+
+      <div class="form-group">
+        <label for="rv-role">Role / Channel / Company <span class="opt">(optional)</span></label>
+        <input type="text" id="rv-role" name="role" placeholder="e.g. YouTuber, 50K subscribers">
+      </div>
+
+      <div class="form-group">
+        <label>Your Rating <span class="req">*</span></label>
+        <div class="star-picker" id="starPicker" role="radiogroup" aria-label="Rating out of 5">
+          <button type="button" class="star" data-value="1" aria-label="1 star"><i class="fa-solid fa-star"></i></button>
+          <button type="button" class="star" data-value="2" aria-label="2 stars"><i class="fa-solid fa-star"></i></button>
+          <button type="button" class="star" data-value="3" aria-label="3 stars"><i class="fa-solid fa-star"></i></button>
+          <button type="button" class="star" data-value="4" aria-label="4 stars"><i class="fa-solid fa-star"></i></button>
+          <button type="button" class="star" data-value="5" aria-label="5 stars"><i class="fa-solid fa-star"></i></button>
+          <span class="star-label" id="starLabel">Tap to rate</span>
+        </div>
+        <input type="hidden" name="rating" id="rv-rating" value="">
+      </div>
+
+      <div class="form-group">
+        <label for="rv-text">Your Review <span class="req">*</span></label>
+        <textarea id="rv-text" name="review" placeholder="What was it like working together? What did the edit do for your videos?" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" id="rvSubmit">
+        <i class="fa-solid fa-spinner"></i>
+        <span class="btn-text-default">Submit Review <i class="fa-solid fa-paper-plane"></i></span>
+      </button>
+      <p class="form-status" id="rvStatus" role="status" aria-live="polite"></p>
+      <p class="review-fineprint">Your review is sent to Rajshiva Studio and published after a quick check.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<script>
+(function(){
+  'use strict';
+  // EDIT: same Web3Forms key as the contact form — reviews arrive at rajshivastudio@gmail.com
+  var WEB3FORMS_KEY = '20f76cb7-7a2f-4c4b-9de4-325252cc9e54';
+
+  var form = document.getElementById('reviewForm');
+  var submitBtn = document.getElementById('rvSubmit');
+  var statusEl = document.getElementById('rvStatus');
+  var ratingInput = document.getElementById('rv-rating');
+  var stars = Array.prototype.slice.call(document.querySelectorAll('#starPicker .star'));
+  var starLabel = document.getElementById('starLabel');
+  var LABELS = { 1:'Poor', 2:'Fair', 3:'Good', 4:'Great', 5:'Excellent' };
+  var current = 0;
+
+  function paint(n){
+    stars.forEach(function(s, i){ s.classList.toggle('on', i < n); });
+  }
+  stars.forEach(function(s){
+    var v = parseInt(s.getAttribute('data-value'), 10);
+    s.addEventListener('mouseenter', function(){ paint(v); starLabel.textContent = LABELS[v]; });
+    s.addEventListener('click', function(){
+      current = v; ratingInput.value = v; paint(v); starLabel.textContent = LABELS[v] + ' (' + v + '/5)';
+    });
+  });
+  document.getElementById('starPicker').addEventListener('mouseleave', function(){
+    paint(current); starLabel.textContent = current ? (LABELS[current] + ' (' + current + '/5)') : 'Tap to rate';
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('rv-name').value.trim();
+    var role = document.getElementById('rv-role').value.trim();
+    var review = document.getElementById('rv-text').value.trim();
+
+    if (!name || !review){
+      statusEl.textContent = 'Please add your name and a few words.';
+      statusEl.className = 'form-status error'; return;
+    }
+    if (!current){
+      statusEl.textContent = 'Please tap the stars to give a rating.';
+      statusEl.className = 'form-status error'; return;
+    }
+
+    submitBtn.classList.add('is-loading');
+    statusEl.textContent = ''; statusEl.className = 'form-status';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: 'New client review: ' + name + ' (' + current + '/5) — Rajshiva Studio',
+        from_name: 'Rajshiva Studio Reviews',
+        name: name,
+        role: role,
+        rating: current + ' / 5',
+        review: review,
+        botcheck: document.getElementById('botcheck').checked ? 'true' : ''
+      })
+    })
+    .then(function(res){ return res.json().then(function(d){ return { ok: res.ok, d: d }; }); })
+    .then(function(r){
+      submitBtn.classList.remove('is-loading');
+      if (r.ok && r.d && r.d.success){
+        form.style.display = 'none';
+        statusEl.className = 'form-status success review-thanks';
+        statusEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you, ' + name.split(' ')[0] + '! Your review has been sent. It will appear on the site shortly.';
+      } else {
+        statusEl.textContent = (r.d && r.d.message) ? r.d.message : 'Could not send. Please try again, or email rajshivastudio@gmail.com.';
+        statusEl.className = 'form-status error';
+      }
+    })
+    .catch(function(){
+      submitBtn.classList.remove('is-loading');
+      statusEl.textContent = 'Network error — please try again, or email rajshivastudio@gmail.com.';
+      statusEl.className = 'form-status error';
+    });
+  });
+})();
+</script>
+</body>
+</html>

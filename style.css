@@ -1125,3 +1125,54 @@ h1, h2, h3, h4, p, li, a, .prompt-text, .ci-value{ overflow-wrap: break-word; }
   .scroll-indicator{ display: none; }
   .error-page{ min-height: auto; padding: 110px 0 70px; }
 }
+
+/* ============================================================
+   22. CLIENT REVIEW FORM PAGE
+   ============================================================ */
+.review-page{
+  min-height: 100vh; display: flex; align-items: center;
+  position: relative; overflow: hidden; padding: 120px 0 70px;
+}
+.review-wrap{
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+  max-width: 1040px;
+}
+.review-intro .page-title{ margin-bottom: 16px; }
+.review-form{ padding: 38px; border-radius: var(--radius-lg); }
+.review-form .form-group{ margin-bottom: 20px; }
+.review-form label{ display:block; font-size: .86rem; margin-bottom: 8px; color: var(--text-secondary); font-weight: 500; }
+.review-form .req{ color: var(--gold-bright); }
+.review-form .opt{ color: var(--text-muted); font-weight: 400; font-size: .8rem; }
+.review-form input[type="text"], .review-form textarea{
+  width: 100%; padding: 14px 16px; border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.03); border: 1px solid var(--border-soft);
+  color: var(--text-primary); font-size: .92rem; transition: var(--transition); resize: vertical;
+}
+.review-form input:focus, .review-form textarea:focus{
+  outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px var(--gold-dim);
+}
+.review-form textarea{ min-height: 120px; }
+
+/* Interactive star picker */
+.star-picker{ display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.star-picker .star{
+  font-size: 1.6rem; line-height: 1; color: var(--bg-surface-2);
+  background: none; border: none; padding: 2px; cursor: pointer; transition: color .15s, transform .15s;
+}
+.star-picker .star:hover{ transform: scale(1.15); }
+.star-picker .star.on{ color: var(--gold-bright); }
+.star-label{ margin-left: 10px; font-size: .82rem; color: var(--text-muted); }
+
+.review-fineprint{ margin-top: 14px; font-size: .76rem; color: var(--text-muted); text-align: center; }
+.review-thanks{ font-size: 1rem; line-height: 1.6; text-align: center; padding: 20px 0; }
+.review-thanks i{ color: #7fd996; }
+
+@media (max-width: 860px){
+  .review-wrap{ grid-template-columns: 1fr; gap: 34px; }
+  .review-intro{ text-align: center; }
+}
+@media (max-width: 400px){
+  .review-form{ padding: 24px 20px; }
+  .star-picker .star{ font-size: 1.4rem; }
+}

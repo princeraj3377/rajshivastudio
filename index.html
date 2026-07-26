@@ -90,7 +90,7 @@
       <a href="#portfolio" class="nav-link">Portfolio</a>
       <a href="#skills" class="nav-link">Skills</a>
       <a href="#why-me" class="nav-link">Why Me</a>
-      <a href="#testimonials" class="nav-link">Reviews</a>
+      {% if site.data.testimonials.testimonials.size > 0 %}<a href="#testimonials" class="nav-link">Reviews</a>{% endif %}
       <a href="resources.html" class="nav-link">Resources</a>
       <a href="blog/" class="nav-link">Blog</a>
       <a href="#contact" class="nav-link nav-cta">Hire Me</a>
@@ -384,6 +384,7 @@
 <!-- ============================================================
      7. CLIENT TESTIMONIALS
      ============================================================ -->
+{% if site.data.testimonials.testimonials.size > 0 %}
 <section class="section testimonials" id="testimonials">
   <div class="container">
     <div class="section-head center reveal">
@@ -393,36 +394,22 @@
     </div>
 
     <div class="testimonials-grid stagger-grid">
+      {% for t in site.data.testimonials.testimonials %}
       <div class="testimonial-card reveal">
         <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">Rajshiva Studio completely transformed our raw footage into something we were proud to post. Retention on our channel jumped almost overnight, and turnaround was faster than any editor we'd used before.</p>
+        <div class="stars">{% for i in (1..t.rating) %}★{% endfor %}</div>
+        <p class="testimonial-text">{{ t.text }}</p>
         <div class="testimonial-author">
-          <div class="author-avatar">RC</div>
-          <div class="author-name"><strong>Ryan Coleman</strong><span class="author-role">YouTuber, 500K Subscribers</span></div>
+          {% assign parts = t.name | strip | split: ' ' %}{% capture initials %}{{ parts[0] | slice: 0,1 }}{% if parts.size > 1 %}{{ parts.last | slice: 0,1 }}{% endif %}{% endcapture %}
+          <div class="author-avatar">{{ initials | upcase }}</div>
+          <div class="author-name"><strong>{{ t.name }}</strong><span class="author-role">{{ t.role }}</span></div>
         </div>
       </div>
-      <div class="testimonial-card reveal">
-        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">Working with Rajshiva Studio felt effortless. They understood our brand voice immediately and delivered social content that consistently outperformed what our in-house team produced.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">SM</div>
-          <div class="author-name"><strong>Sara Malik</strong><span class="author-role">Marketing Lead, Lumora</span></div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">Our podcast finally looks and sounds as good as it should. Rajshiva Studio handles the multi-cam edit, the clips, and even the thumbnails — one less thing for us to think about every week.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">DB</div>
-          <div class="author-name"><strong>Devon Blake</strong><span class="author-role">Host, The Grind Podcast</span></div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
+{% endif %}
 
 <!-- ============================================================
      8. STATISTICS COUNTER
