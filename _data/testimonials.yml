@@ -1,6 +1,5 @@
-# CLIENT REVIEWS — managed from the panel: "Client Reviews"
-#
-# Reviews arrive by email from the review form (/review.html).
-# To approve one: add it here (or via the panel) and it goes live.
-# Empty list = the whole Reviews section stays hidden.
-testimonials: []
+testimonials:
+  - name: PRINCE KUMAR
+    role: "YOUTBER "
+    rating: 4
+    text: SERIVCES MAKE ME HAPPY
