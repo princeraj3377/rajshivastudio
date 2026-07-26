@@ -1176,3 +1176,8 @@ h1, h2, h3, h4, p, li, a, .prompt-text, .ci-value{ overflow-wrap: break-word; }
   .review-form{ padding: 24px 20px; }
   .star-picker .star{ font-size: 1.4rem; }
 }
+
+/* "Leave a Review" button in the contact section */
+.review-cta{ margin-top: 22px; }
+.review-cta i{ color: var(--gold-bright); }
+.review-cta:hover i{ color: inherit; }
